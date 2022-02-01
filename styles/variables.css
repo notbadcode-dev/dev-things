@@ -1,0 +1,46 @@
+:root {
+  --primary-color: rgba(55, 64, 255, 1);
+  --primary-color-10: rgba(55, 64, 255, 0.1);
+  --primary-color-20: rgba(55, 64, 255, 0.2);
+  --primary-color-30: rgba(55, 64, 255, 0.3);
+  --primary-color-40: rgba(55, 64, 255, 0.4);
+  --primary-color-50: rgba(55, 64, 255, 0.5);
+  --primary-color-60: rgba(55, 64, 255, 0.6);
+  --primary-color-70: rgba(55, 64, 255, 0.7);
+  --primary-color-80: rgba(55, 64, 255, 0.8);
+  --primary-color-90: rgba(55, 64, 255, 0.9);
+  --primary-color-filter: invert(22%) sepia(99%) saturate(5162%)
+    hue-rotate(240deg) brightness(101%) contrast(100%);
+
+  --secondary-color: rgba(247, 247, 247, 1);
+  --secondary-color-10: rgba(247, 247, 247, 0.1);
+  --secondary-color-20: rgba(247, 247, 247, 0.2);
+  --secondary-color-30: rgba(247, 247, 247, 0.3);
+  --secondary-color-40: rgba(247, 247, 247, 0.4);
+  --secondary-color-50: rgba(247, 247, 247, 0.5);
+  --secondary-color-60: rgba(247, 247, 247, 0.6);
+  --secondary-color-70: rgba(247, 247, 247, 0.7);
+  --secondary-color-80: rgba(247, 247, 247, 0.8);
+  --secondary-color-90: rgba(247, 247, 247, 0.9);
+  --secondary-color-filter: invert(92%) sepia(100%) saturate(0%)
+    hue-rotate(220deg) brightness(104%) contrast(104%);
+
+  --danger-color: rgba(220, 53, 69, 1);
+  --danger-color-10: rgba(220, 53, 69, 0.1);
+  --danger-color-20: rgba(220, 53, 69, 0.2);
+  --danger-color-30: rgba(220, 53, 69, 0.3);
+  --danger-color-40: rgba(220, 53, 69, 0.4);
+  --danger-color-50: rgba(220, 53, 69, 0.5);
+  --danger-color-60: rgba(220, 53, 69, 0.6);
+  --danger-color-70: rgba(220, 53, 69, 0.7);
+  --danger-color-80: rgba(220, 53, 69, 0.8);
+  --danger-color-90: rgba(220, 53, 69, 0.9);
+  --danger-color-filter: invert(21%) sepia(76%) saturate(2550%)
+    hue-rotate(336deg) brightness(105%) contrast(89%);
+
+  --white-color: rgba(255, 255, 255, 1);
+
+  --icon-heart-filter: var(--danger-color-filter);
+
+  --border-color: rgba(234, 234, 234, 1);
+}

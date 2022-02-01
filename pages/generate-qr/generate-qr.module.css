@@ -1,0 +1,22 @@
+.title {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.iconQr {
+  position: relative;
+  top: 0.4rem;
+  margin-right: 0.4rem;
+  font-size: 3.5rem;
+  text-align: center;
+  filter: var(--primary-color-filter);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
+  margin: 1rem 6rem;
+}

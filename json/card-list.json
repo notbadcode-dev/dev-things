@@ -1,0 +1,12 @@
+[
+    {
+      "id": 1,
+      "icon": {
+        "value": "ph:qr-code-duotone",
+        "inline": "true"
+      },
+      "route": "/generate-qr",
+      "title": "QR Code",
+      "description": "Geneare QR Code With additional information"
+    }
+]
