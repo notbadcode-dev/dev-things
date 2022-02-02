@@ -2,8 +2,11 @@ import { Icon } from "@iconify/react";
 import styles from "./generate-qr.module.css";
 
 import CustomButton from "../../common/components/button/button.component";
+import CustomInput from "../../common/components/input/input.component";
 import { Button } from "../../core/models/button.model";
 import { ButtonColor } from "../../core/enums/button.enum";
+import { BaseInput } from "../../core/models/input.model";
+import { InputTextType, InputType } from "../../core/enums/input.model";
 
 const generateQrCode = () => {
   console.log("Generate");
@@ -30,6 +33,12 @@ const BUTTON_LIST: Button[] = [
   },
 ];
 
+const INPUT: BaseInput = {
+  label: "Name",
+  type: InputType.text,
+  textType: InputTextType.textarea,
+};
+
 function GenerateQr() {
   return (
     <>
@@ -38,6 +47,10 @@ function GenerateQr() {
           <Icon icon="ph:qr-code-duotone" inline={true} />
         </span>
         <span>Generate QR Code</span>
+      </div>
+
+      <div>
+        <CustomInput {...{ input: INPUT }}></CustomInput>
       </div>
 
       <div className={styles.actions}>

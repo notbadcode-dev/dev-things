@@ -15,7 +15,7 @@ const Header = () => {
             inline={true}
             className={styles.iconThings}
           />{" "}
-          things!
+          things! <span> (Beta)</span>
         </a>
       </Link>
     </h1>

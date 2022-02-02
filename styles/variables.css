@@ -38,9 +38,18 @@
   --danger-color-filter: invert(21%) sepia(76%) saturate(2550%)
     hue-rotate(336deg) brightness(105%) contrast(89%);
 
+  --disabled-color: rgba(233, 233, 233, 1);
+  --disabled-color-filter: invert(100%) sepia(93%) saturate(14%)
+    hue-rotate(185deg) brightness(115%) contrast(83%);
+
   --white-color: rgba(255, 255, 255, 1);
 
   --icon-heart-filter: var(--danger-color-filter);
+  --icon-delete-input-filter: invert(77%) sepia(8%) saturate(12%)
+    hue-rotate(340deg) brightness(88%) contrast(81%);
 
   --border-color: rgba(234, 234, 234, 1);
+  --input-text-color: rgba(0, 0, 0, 1);
+  --input-placeholder-color: rgba(100, 100, 100, 1);
+  --input-disabled-background-color: var(--disabled-color);
 }
