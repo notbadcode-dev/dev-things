@@ -46,6 +46,7 @@ const CustomInput: React.FC<Props> = ({ input: data }) => {
         <label htmlFor={data.id} className={styles.label}>
           <textarea
             id={data.id}
+            cols={80}
             placeholder=" "
             value={value}
             readOnly={data.readOnly}

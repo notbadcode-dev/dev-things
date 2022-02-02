@@ -47,11 +47,11 @@
 }
 
 .label input + span {
-  margin-top: 10%;
+  margin-top: 12%;
 }
 
 .label textarea + span {
-  margin-top: 10%;
+  margin-top: 3%;
 }
 
 .label input:focus + span,
