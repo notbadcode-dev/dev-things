@@ -4,14 +4,15 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 2rem 0;
+  padding: 0.5rem 0;
   margin: 0 1.5rem;
   border-top: 1px solid var(--border-color);
   justify-content: center;
   align-items: center;
+  background-color: var(--white-color);
 }
 
-.footer span {
+.footer div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,4 +23,10 @@
   filter: var(--icon-heart-filter);
   font-size: 2rem;
   margin: 0 0.2rem;
+}
+
+.by {
+  margin-left: 0.2rem;
+  font-weight: 500;
+  font-family: "Nagoda", var(--defaults-fonts);
 }

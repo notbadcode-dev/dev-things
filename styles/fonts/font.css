@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"), url(./poppins/Poppins-Regular.ttf) format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nagoda";
+  src: local("Nagoda"), url(./nagoda/Nagoda.woff) format("woff"),
+    url(./nagoda/Nagoda.otf) format("opentype"),
+    url(./nagoda/Nagoda.ttf) format("truetype");
+  font-display: swap;
+}

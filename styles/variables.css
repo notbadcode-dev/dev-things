@@ -1,4 +1,8 @@
 :root {
+  --defaults-fonts: "Poppins", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+
   --primary-color: rgba(55, 64, 255, 1);
   --primary-color-10: rgba(55, 64, 255, 0.1);
   --primary-color-20: rgba(55, 64, 255, 0.2);

@@ -12,7 +12,10 @@ const CustomInput: React.FC<Props> = ({ input: data }) => {
   data = BaseInputHelper.mapObject(data);
 
   const [value, setValue] = useState("");
-  const handleChange = (e: any) => setValue(e.target.value);
+  const handleChange = (e: any) => {
+    data.onChange(e);
+    setValue(e.target.value);
+  };
   const clearInput = (e: any) => setValue("");
 
   let input = (
@@ -30,13 +33,13 @@ const CustomInput: React.FC<Props> = ({ input: data }) => {
           onChange={handleChange}
         />
         <span>{data.label}</span>
-        <Icon
-          icon="uim:times-circle"
-          className={styles.iconDelete}
-          data-disabled={value.length === 0}
-          onClick={clearInput}
-        />
       </label>
+      <Icon
+        icon="uim:times-circle"
+        className={styles.iconDelete}
+        data-disabled={value.length === 0}
+        onClick={clearInput}
+      />
     </>
   );
 

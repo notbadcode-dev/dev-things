@@ -13,7 +13,8 @@ export class BaseInput {
     public readOnly?: boolean,
     public disabled?: boolean,
     public onFocus?: any,
-    public onBlur?: any
+    public onBlur?: any,
+    public onChange?: any
   ) {}
 }
 
@@ -29,7 +30,8 @@ export class BaseInputHelper {
       object.readOnly ?? false,
       object.disabled ?? false,
       object.onFocus,
-      object.disabled
+      object.onBlur,
+      object.onChange
     );
   }
 }

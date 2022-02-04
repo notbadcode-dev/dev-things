@@ -5,11 +5,11 @@ import styles from "./footer.module.css";
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <span>
+      <div>
         Develop with{" "}
         <Icon icon="ant-design:heart-twotone" className={styles.iconHeart} /> by
-        notBadCode.
-      </span>
+        <span className={styles.by}> notBadCode</span>.
+      </div>
     </footer>
   );
 };
