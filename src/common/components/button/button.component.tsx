@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 import React, { ReactElement } from "react";
 
-import { Button, ButtonHelper } from "../../../src/core/models/button.model";
+import { Button, ButtonHelper } from "../../../core/models/button.model";
 
 import styles from "./button.module.css";
 

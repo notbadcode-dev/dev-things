@@ -1,8 +1,8 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 
-import Header from "../../common/components/structure/header/header.component";
-import Footer from "../../common/components/structure/footer/footer.component";
+import Header from "../common/components/structure/header/header.component";
+import Footer from "../common/components/structure/footer/footer.component";
 import { createTheme, NextUIProvider } from "@nextui-org/react";
 
 const theme = createTheme({

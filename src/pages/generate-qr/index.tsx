@@ -3,8 +3,8 @@ import { Grid } from "@nextui-org/react";
 import { useState } from "react";
 import QRCode from "react-qr-code";
 
-import CustomButton from "../../../common/components/button/button.component";
-import CustomInput from "../../../common/components/input/input.component";
+import CustomButton from "../../common/components/button/button.component";
+import CustomInput from "../../common/components/input/input.component";
 
 import { InputSize, InputType } from "../../core/enums/input.enum";
 import { ButtonColor } from "../../core/enums/button.enum";

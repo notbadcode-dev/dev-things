@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
-import CardList from "../../common/components/cards/card-list/card-list.component";
+import CardList from "../common/components/cards/card-list/card-list.component";
 
 import { ICard } from "../core/models/card.model";
 
