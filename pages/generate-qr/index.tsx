@@ -1,19 +1,21 @@
 import { Icon } from "@iconify/react";
-import styles from "./generate-qr.module.css";
+import { Grid } from "@nextui-org/react";
+import { useState } from "react";
+import QRCode from "react-qr-code";
 
 import CustomButton from "../../common/components/button/button.component";
 import CustomInput from "../../common/components/input/input.component";
-import { Button } from "../../core/models/button.model";
+
+import { InputSize, InputType } from "../../core/enums/input.enum";
 import { ButtonColor } from "../../core/enums/button.enum";
-import { BaseInput } from "../../core/models/input.model";
-import { InputTextType, InputType } from "../../core/enums/input.model";
-import QRCode from "react-qr-code";
-import { useState } from "react";
+
+import styles from "./generate-qr.module.css";
+import { APP_EG } from "../../core/constants/eg.constant";
 
 const GenerateQr = () => {
-  const [value, setValue] = useState("http://locahost:3000");
+  const [value, setValue] = useState("");
 
-  const onImageCownload = () => {
+  const qrCodeDowload = () => {
     const svg = document.getElementById("QRCode");
     const svgData = new XMLSerializer()?.serializeToString(svg);
     const canvas = document.createElement("canvas");
@@ -32,69 +34,64 @@ const GenerateQr = () => {
     img.src = `data:image/svg+xml;base64,${btoa(svgData)}`;
   };
 
-  const clearQrCodeContent = () => {
-    setValue("http://locahost:3000");
-  };
-
   const onChangeQrCodeContent = (e: any) => {
     setValue(e.target.value);
   };
 
-  const BUTTON_LIST: Button[] = [
-    {
-      label: "Clear",
-      color: ButtonColor.secondary,
-      accesKey: "C",
-      tabIndex: 1,
-      onPress: clearQrCodeContent,
-    },
-    {
-      label: "Download",
-      color: ButtonColor.primary,
-      accesKey: "G",
-      tabIndex: 2,
-      onPress: onImageCownload,
-    },
+  const inputEg: string = [APP_EG.URL, APP_EG.TEXT, APP_EG.WIFI][
+    Math.floor(Math.random() * 2)
   ];
-
-  const INPUT: BaseInput = {
-    label: "QR Code content",
-    type: InputType.text,
-    textType: InputTextType.input,
-    onChange: onChangeQrCodeContent,
-  };
 
   return (
     <>
-      <div className={styles.title}>
-        <span className={styles.iconQr}>
-          <Icon icon="ph:qr-code-duotone" inline={true} />
-        </span>
-        <span>Generate QR Code</span>
-      </div>
+      <Grid.Container gap={4}>
+        <Grid xs={12} justify="center">
+          <div className={styles.title}>
+            <Icon icon="ph:qr-code-duotone" inline={true} />
+            <span>Generate QR Code</span>
+          </div>
+        </Grid>
 
-      <div className={styles.content}>
-        <div className="qr-code-container">
-          <div className="qr-code">
+        <Grid xs={12} justify="center">
+          <div className={styles.qrCode}>
             <QRCode id="QRCode" value={value} />
           </div>
-        </div>
+        </Grid>
 
-        <div>
-          <CustomInput {...{ input: INPUT }}></CustomInput>
-        </div>
-      </div>
+        <Grid xs={12} justify="center">
+          <Grid.Container gap={2} justify="center">
+            <Grid xs={12} sm={6} md={4} justify="center">
+              <CustomInput
+                input={{
+                  label: "QR Code content",
+                  placeholder: inputEg,
+                  type: InputType.text,
+                  size: InputSize.xlarge,
+                  value: value,
+                  tabIndex: 1,
+                  onChange: onChangeQrCodeContent,
+                }}
+              ></CustomInput>
+            </Grid>
+          </Grid.Container>
+        </Grid>
 
-      <div className={styles.actions}>
-        {BUTTON_LIST.map((button) => {
-          return (
+        <Grid xs={12} justify="center">
+          <div className={styles.actions}>
             <CustomButton
-              {...{ button: button }}
-              key={button.accesKey}
+              button={{
+                label: "Download",
+                color: ButtonColor.primary,
+                accesKey: "G",
+                tabIndex: 2,
+                disabled: value.toString().trim().length === 0,
+                icon: <Icon icon="ph:qr-code-duotone" inline={true} />,
+                onPress: qrCodeDowload,
+              }}
             ></CustomButton>
-          );
-        })}
-      </div>
+          </div>
+        </Grid>
+      </Grid.Container>
     </>
   );
 };

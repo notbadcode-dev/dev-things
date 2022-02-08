@@ -23,6 +23,21 @@ export enum InputType {
   week = "week",
 }
 
+export enum InputSize {
+  xsmall = "xs",
+  small = "sm",
+  medium = "md",
+  large = "lg",
+  xlarge = "xl",
+}
+
+export type InputSizes =
+  | InputSize.xsmall
+  | InputSize.small
+  | InputSize.medium
+  | InputSize.large
+  | InputSize.xlarge;
+
 export type InputTypes =
   | InputType.button
   | InputType.checkbox

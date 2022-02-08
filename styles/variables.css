@@ -3,6 +3,9 @@
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;
 
+  --header-back-drop-filter: saturate(180%) blur(10px);
+  --header-background-color: rgba(255, 255, 255, 0.5);
+
   --primary-color: rgba(55, 64, 255, 1);
   --primary-color-10: rgba(55, 64, 255, 0.1);
   --primary-color-20: rgba(55, 64, 255, 0.2);
@@ -53,6 +56,8 @@
     hue-rotate(340deg) brightness(88%) contrast(81%);
 
   --border-color: rgba(234, 234, 234, 1);
+  --border-radius: 0.5em;
+
   --input-text-color: rgba(0, 0, 0, 1);
   --input-placeholder-color: rgba(100, 100, 100, 1);
   --input-disabled-background-color: var(--disabled-color);

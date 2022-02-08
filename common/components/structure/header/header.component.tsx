@@ -6,7 +6,6 @@ import styles from "./header.module.css";
 const Header = () => {
   return (
     <h1 className={styles.title}>
-      Hello! I'm{" "}
       <Link href="/">
         <a>
           Dev{" "}
@@ -15,7 +14,7 @@ const Header = () => {
             inline={true}
             className={styles.iconThings}
           />{" "}
-          things! <span> (Beta)</span>
+          things! <span>(Beta)</span>
         </a>
       </Link>
     </h1>

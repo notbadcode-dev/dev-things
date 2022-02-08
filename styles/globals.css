@@ -1,5 +1,5 @@
 @import "./variables.css";
-@import "./fonts//font.css";
+@import "./fonts/font.css";
 
 html,
 body {
@@ -10,6 +10,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: -webkit-sticky;
+  backdrop-filter: var(--header-back-drop-filter);
+  -webkit-backdrop-filter: var(--header-back-drop-filter);
+  background: var(--header-background-color);
+  height: 4rem;
 }
 
 a {

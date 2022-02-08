@@ -1,6 +1,6 @@
 [
     {
-      "id": 1,
+      "id": "qr-code",
       "icon": {
         "value": "ph:qr-code-duotone",
         "inline": "true"
@@ -8,5 +8,14 @@
       "route": "/generate-qr",
       "title": "QR Code",
       "description": "Geneare QR Code With additional information"
+    }, {
+      "id": "shortener",
+      "icon": {
+        "value": "ic:twotone-add-link",
+        "inline": "true"
+      },
+      "route": "/shortener",
+      "title": "Shortener",
+      "description": "Shorten a URL for easier sharing."
     }
 ]

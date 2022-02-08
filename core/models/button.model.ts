@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import { ButtonColor, ButtonType } from "../enums/button.enum";
 
 const unnamedButton: string = "unnamed";
@@ -19,7 +20,9 @@ export class Button {
     public className?: string,
     public tabIndex?: number,
     public accesKey?: string,
-    public disabled?: boolean
+    public disabled?: boolean,
+    public disable?: any,
+    public icon?: ReactElement<any, any>
   ) {}
 }
 
@@ -34,7 +37,9 @@ export class ButtonHelper {
       object.className ?? "",
       object.tabIndex ?? -1,
       object.accesKey,
-      object.disabled ?? false
+      object.disabled ?? false,
+      object.disable ?? undefined,
+      object.icon ?? undefined
     );
   }
 }

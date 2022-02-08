@@ -1,7 +1,7 @@
 import { IIcon } from "./icon.model";
 
 export interface ICard {
-  id: number;
+  id: string;
   icon: IIcon;
   route: string;
   title: string;
