@@ -2,17 +2,19 @@ import { Icon } from "@iconify/react";
 import { Grid } from "@nextui-org/react";
 import { useState } from "react";
 
+import { SHORTENER } from "../../core/constants/shortener.constant";
+import { REGEX } from "../../core/constants/regex.constant";
+import { APP_EG } from "../../core/constants/eg.constant";
+
+import HeaderModule from "../../common/components/structure/module-header/module-header.component";
 import CustomButton from "../../common/components/button/button.component";
 import CustomInput from "../../common/components/input/input.component";
 
+import { ShortenerRequestResponse } from "../../core/models/shortener.model";
 import { InputSize, InputType } from "../../core/enums/input.enum";
 import { ButtonColor } from "../../core/enums/button.enum";
 
 import styles from "./shortener.module.css";
-import { SHORTENER } from "../../core/constants/shortener.constant";
-import { ShortenerRequestResponse } from "../../core/models/shortener.model";
-import { REGEX } from "../../core/constants/regex.constant";
-import { APP_EG } from "../../core/constants/eg.constant";
 
 const Shortener = () => {
   const shortedUrlId: string = "shortedUrlId";
@@ -70,10 +72,14 @@ const Shortener = () => {
     <>
       <Grid.Container gap={6}>
         <Grid xs={12} justify="center">
-          <div className={styles.title}>
-            <Icon icon="ic:twotone-add-link" inline={true} />
-            <span>Shortener</span>
-          </div>
+          <HeaderModule
+            header={{
+              icon: "ic:twotone-add-link",
+              iconInline: true,
+              iconFilterStyle: false,
+              title: "Shortener",
+            }}
+          ></HeaderModule>
         </Grid>
 
         <Grid xs={12} justify="center">
@@ -110,7 +116,7 @@ const Shortener = () => {
         </Grid>
 
         <Grid xs={12} justify="center">
-          <div className={styles.actions}>
+          <div className={"actions"}>
             <CustomButton
               button={{
                 label: "Short",

@@ -3,6 +3,9 @@ import { Grid } from "@nextui-org/react";
 import { useState } from "react";
 import QRCode from "react-qr-code";
 
+import { APP_EG } from "../../core/constants/eg.constant";
+
+import HeaderModule from "../../common/components/structure/module-header/module-header.component";
 import CustomButton from "../../common/components/button/button.component";
 import CustomInput from "../../common/components/input/input.component";
 
@@ -10,7 +13,6 @@ import { InputSize, InputType } from "../../core/enums/input.enum";
 import { ButtonColor } from "../../core/enums/button.enum";
 
 import styles from "./generate-qr.module.css";
-import { APP_EG } from "../../core/constants/eg.constant";
 
 const GenerateQr = () => {
   const [value, setValue] = useState("");
@@ -46,10 +48,14 @@ const GenerateQr = () => {
     <>
       <Grid.Container gap={4}>
         <Grid xs={12} justify="center">
-          <div className={styles.title}>
-            <Icon icon="ph:qr-code-duotone" inline={true} />
-            <span>Generate QR Code</span>
-          </div>
+          <HeaderModule
+            header={{
+              icon: "ph:qr-code-duotone",
+              iconInline: true,
+              iconFilterStyle: true,
+              title: "Generate QR Code",
+            }}
+          ></HeaderModule>
         </Grid>
 
         <Grid xs={12} justify="center">
@@ -77,7 +83,7 @@ const GenerateQr = () => {
         </Grid>
 
         <Grid xs={12} justify="center">
-          <div className={styles.actions}>
+          <div className={"actions"}>
             <CustomButton
               button={{
                 label: "Download",

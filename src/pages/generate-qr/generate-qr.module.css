@@ -1,24 +1,3 @@
-.container div {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.title {
-  font-size: 2.5rem;
-  line-height: 1.2;
-  text-align: center;
-}
-
-.title :first-child {
-  position: relative;
-  top: 0.4rem;
-  margin-right: 0.4rem;
-  font-size: 3rem;
-  text-align: center;
-  filter: var(--primary-color-filter);
-}
-
 .qrCode {
   align-items: flex-start;
   background-color: var(--white-color);
@@ -31,9 +10,4 @@
 
 .qrCode :first-child {
   margin: 1em;
-}
-
-.actions {
-  align-items: center;
-  border-top: 1px solid var(--border-color);
 }

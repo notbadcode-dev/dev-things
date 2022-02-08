@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Input } from "@nextui-org/react";
 
 import { BaseInput, BaseInputHelper } from "../../../core/models/input.model";

@@ -1,26 +1,3 @@
-.container div {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.title {
-  font-size: 2.5rem;
-  line-height: 1.2;
-  text-align: center;
-}
-
-.title :first-child {
-  position: relative;
-  top: 0.4rem;
-  margin-right: 0.8rem;
-  font-size: 3.5rem;
-  text-align: center;
-  color: var(--primary-color);
-  border-radius: 8px;
-  background-color: var(--primary-color-20);
-}
-
 .urlContainer {
   display: flex;
   justify-content: center;
@@ -30,11 +7,4 @@
 
 .urlContainer [data-state="disabled"] {
   margin-top: 2em;
-}
-
-.actions {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  border-top: 1px solid var(--border-color);
 }
