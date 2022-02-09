@@ -3,9 +3,9 @@ import type { AppProps } from "next/app";
 import { createTheme, NextUIProvider } from "@nextui-org/react";
 import { ToastProvider } from "react-toast-notifications";
 
-import Header from "../common/components/structure/header/header.component";
-import Footer from "../common/components/structure/footer/footer.component";
-import CustomToast from "../common/components/toast/toast.component";
+import Header from "../shared/components/structure/header/header.component";
+import Footer from "../shared/components/structure/footer/footer.component";
+import CustomToast from "../shared/components/toast/toast.component";
 
 const theme = createTheme({
   type: "all",

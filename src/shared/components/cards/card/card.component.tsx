@@ -3,8 +3,8 @@ import Link from "next/link";
 import { Icon } from "@iconify/react";
 import styles from "./card.module.css";
 
-import { ICard } from "../../../../core/models/card.model";
-import { IIcon } from "../../../../core/models/icon.model";
+import { ICard } from "../../../models/card.model";
+import { IIcon } from "../../../models/icon.model";
 
 type Props = {
   card: ICard;

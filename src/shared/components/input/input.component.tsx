@@ -1,7 +1,7 @@
 import React from "react";
 import { Input } from "@nextui-org/react";
 
-import { BaseInput, BaseInputHelper } from "../../../core/models/input.model";
+import { BaseInput, BaseInputHelper } from "../../models/input.model";
 
 import styles from "./input.module.css";
 

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./card-list.module.css";
 import Card from "../card/card.component";
 
-import { ICard } from "../../../../core/models/card.model";
+import { ICard } from "../../../models/card.model";
 
 type Props = {
   cardList: ICard[];

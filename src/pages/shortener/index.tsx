@@ -3,17 +3,17 @@ import { Icon } from "@iconify/react";
 import { Grid } from "@nextui-org/react";
 import { useToasts } from "react-toast-notifications";
 
-import { SHORTENER } from "../../core/constants/shortener.constant";
-import { REGEX } from "../../core/constants/regex.constant";
-import { APP_EG } from "../../core/constants/eg.constant";
+import { SHORTENER } from "../../shared/constants/shortener.constant";
+import { REGEX } from "../../shared/constants/regex.constant";
+import { APP_EG } from "../../shared/constants/eg.constant";
 
-import HeaderModule from "../../common/components/structure/module-header/module-header.component";
-import CustomButton from "../../common/components/button/button.component";
-import CustomInput from "../../common/components/input/input.component";
+import HeaderModule from "../../shared/components/structure/module-header/module-header.component";
+import CustomButton from "../../shared/components/button/button.component";
+import CustomInput from "../../shared/components/input/input.component";
 
-import { ShortenerRequestResponse } from "../../core/models/shortener.model";
-import { InputSize, InputType } from "../../core/enums/input.enum";
-import { ButtonColor } from "../../core/enums/button.enum";
+import { ShortenerRequestResponse } from "../../shared/models/shortener.model";
+import { InputSize, InputType } from "../../shared/enums/input.enum";
+import { ButtonColor } from "../../shared/enums/button.enum";
 
 const Shortener = () => {
   const { addToast } = useToasts();

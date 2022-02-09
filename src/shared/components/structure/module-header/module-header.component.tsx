@@ -2,7 +2,7 @@ import React from "react";
 import { Icon } from "@iconify/react";
 import styles from "./module-header.module.css";
 
-import { IHeaderModule } from "../../../../core/models/header-module.model";
+import { IHeaderModule } from "../../../models/header-module.model";
 
 type Props = {
   header: IHeaderModule;

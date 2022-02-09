@@ -3,14 +3,14 @@ import { Grid } from "@nextui-org/react";
 import { useState } from "react";
 import QRCode from "react-qr-code";
 
-import { APP_EG } from "../../core/constants/eg.constant";
+import { APP_EG } from "../../shared/constants/eg.constant";
 
-import HeaderModule from "../../common/components/structure/module-header/module-header.component";
-import CustomButton from "../../common/components/button/button.component";
-import CustomInput from "../../common/components/input/input.component";
+import HeaderModule from "../../shared/components/structure/module-header/module-header.component";
+import CustomButton from "../../shared/components/button/button.component";
+import CustomInput from "../../shared/components/input/input.component";
 
-import { InputSize, InputType } from "../../core/enums/input.enum";
-import { ButtonColor } from "../../core/enums/button.enum";
+import { InputSize, InputType } from "../../shared/enums/input.enum";
+import { ButtonColor } from "../../shared/enums/button.enum";
 
 import styles from "./generate-qr.module.css";
 
