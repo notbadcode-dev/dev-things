@@ -50,14 +50,22 @@ const Shortener = () => {
   };
 
   const copyShortURL = () => {
-    const shortedInput: any = document?.getElementById(shortedUrlId);
-    if (shortedInput) {
-      shortedInput.select();
-      document.execCommand("copy");
-      alert("yeah!"); // success
-    } else {
-      alert("err"); // error
-    }
+    navigator.clipboard.writeText(shortedUrl).then(
+      () => {},
+      () => {
+        /* Rejected - clipboard failed */
+      }
+    );
+
+    // const shortedInput: any = document?.getElementById(shortedUrlId);
+    // if (shortedInput) {
+    //   shortedInput.select();
+    //   shortedInput.setSelectionRange(0, 99999);
+    //   navigator.clipboard.writeText(shortedInput.value);
+    //   alert("yeah!"); // success
+    // } else {
+    //   alert("err"); // error
+    // }
   };
 
   const onChangeShortenerUrl = (e: any) => {
