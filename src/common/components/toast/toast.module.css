@@ -1,0 +1,31 @@
+.toast {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 6px;
+  padding: 15px 15px 15px 50px;
+  width: 300px;
+  border-radius: var(--border-radius);
+  box-shadow: none;
+
+  border-radius: 0.4rem;
+  border: 1px solid;
+  margin-bottom: 1rem;
+}
+
+.toast::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.5rem;
+  background: var(--notify-background);
+  padding: 0 0.32rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.toast[data-type="info"] {
+  color: var(--notify-info-dark);
+  background: var(--notify-info-bg);
+  border-color: var(--notify-info-shadow);
+}

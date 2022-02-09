@@ -1,9 +1,11 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
+import { createTheme, NextUIProvider } from "@nextui-org/react";
+import { ToastProvider } from "react-toast-notifications";
 
 import Header from "../common/components/structure/header/header.component";
 import Footer from "../common/components/structure/footer/footer.component";
-import { createTheme, NextUIProvider } from "@nextui-org/react";
+import CustomToast from "../common/components/toast/toast.component";
 
 const theme = createTheme({
   type: "all",
@@ -24,11 +26,13 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <NextUIProvider theme={theme}>
-        <header>
-          <Header></Header>
-        </header>
-        <Component {...pageProps} />
-        <Footer></Footer>
+        <ToastProvider autoDismiss={true}>
+          <header>
+            <Header></Header>
+          </header>
+          <Component {...pageProps} />
+          <Footer></Footer>
+        </ToastProvider>
       </NextUIProvider>
     </>
   );

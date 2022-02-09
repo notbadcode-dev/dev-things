@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { Icon } from "@iconify/react";
 import { Grid } from "@nextui-org/react";
-import { useState } from "react";
+import { useToasts } from "react-toast-notifications";
 
 import { SHORTENER } from "../../core/constants/shortener.constant";
 import { REGEX } from "../../core/constants/regex.constant";
@@ -14,9 +15,9 @@ import { ShortenerRequestResponse } from "../../core/models/shortener.model";
 import { InputSize, InputType } from "../../core/enums/input.enum";
 import { ButtonColor } from "../../core/enums/button.enum";
 
-import styles from "./shortener.module.css";
-
 const Shortener = () => {
+  const { addToast } = useToasts();
+
   const shortedUrlId: string = "shortedUrlId";
   const [url, setUrl] = useState("");
   const [shortedUrl, setShortedUrl] = useState("");
@@ -51,21 +52,15 @@ const Shortener = () => {
 
   const copyShortURL = () => {
     navigator.clipboard.writeText(shortedUrl).then(
-      () => {},
       () => {
-        /* Rejected - clipboard failed */
+        addToast("Copy to clipboard", { appearance: "success" });
+      },
+      () => {
+        addToast("A problem occurred, try to copy manually", {
+          appearance: "error",
+        });
       }
     );
-
-    // const shortedInput: any = document?.getElementById(shortedUrlId);
-    // if (shortedInput) {
-    //   shortedInput.select();
-    //   shortedInput.setSelectionRange(0, 99999);
-    //   navigator.clipboard.writeText(shortedInput.value);
-    //   alert("yeah!"); // success
-    // } else {
-    //   alert("err"); // error
-    // }
   };
 
   const onChangeShortenerUrl = (e: any) => {
