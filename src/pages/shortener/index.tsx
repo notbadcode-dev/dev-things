@@ -39,7 +39,7 @@ const Shortener = () => {
           return response.json();
         })
         .then((data: ShortenerRequestResponse) => {
-          setShortedUrl(data.link);
+          setShortedUrl(data.short_url);
         })
         .catch((error) => {
           console.log(error);

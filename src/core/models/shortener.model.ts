@@ -5,6 +5,7 @@ export interface ShortenerRequestResponse {
   deeplinks: string[];
   id: string;
   link: string;
+  short_url: string;
   long_url: string;
   references: {
     group: string;
