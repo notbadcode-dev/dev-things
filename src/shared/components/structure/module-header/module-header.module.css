@@ -4,6 +4,10 @@
   text-align: center;
 }
 
+.title span {
+  color: var(--input-text-color);
+}
+
 .title :first-child {
   position: relative;
   top: 0.25rem;

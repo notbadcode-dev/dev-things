@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Icon } from "@iconify/react";
 import { Grid } from "@nextui-org/react";
 import { useToasts } from "react-toast-notifications";
+import { useTranslation } from "react-i18next";
 
 import { SHORTENER } from "../../shared/constants/shortener.constant";
 import { REGEX } from "../../shared/constants/regex.constant";
@@ -16,6 +17,7 @@ import { InputSize, InputType } from "../../shared/enums/input.enum";
 import { ButtonColor } from "../../shared/enums/button.enum";
 
 const Shortener = () => {
+  const { t } = useTranslation();
   const { addToast } = useToasts();
 
   const shortedUrlId: string = "shortedUrlId";
@@ -53,10 +55,12 @@ const Shortener = () => {
   const copyShortURL = () => {
     navigator.clipboard.writeText(shortedUrl).then(
       () => {
-        addToast("Copy to clipboard", { appearance: "success" });
+        addToast(t("shortener.messages.addClipboardSucces"), {
+          appearance: "success",
+        });
       },
       () => {
-        addToast("A problem occurred, try to copy manually", {
+        addToast(t("shortener.messages.addClipboardError"), {
           appearance: "error",
         });
       }
@@ -71,6 +75,10 @@ const Shortener = () => {
     setShortedUrl(e.target.value);
   };
 
+  let disabledShortenUrl: boolean = !new RegExp(REGEX.SHORTENER_URL).test(
+    SHORTENER.ALLOWED_PROTOCOL + url
+  );
+
   return (
     <>
       <Grid.Container gap={6}>
@@ -80,7 +88,7 @@ const Shortener = () => {
               icon: "ic:twotone-add-link",
               iconInline: true,
               iconFilterStyle: false,
-              title: "Shortener",
+              title: "shortener.title",
             }}
           ></HeaderModule>
         </Grid>
@@ -90,7 +98,7 @@ const Shortener = () => {
             <Grid xs={10} sm={6} md={4} justify="center">
               <CustomInput
                 input={{
-                  label: "URL to short",
+                  label: "shortener.fileds.urlToShort.label",
                   placeholder: APP_EG.URL,
                   labelLeft: SHORTENER.ALLOWED_PROTOCOL,
                   type: InputType.text,
@@ -104,8 +112,8 @@ const Shortener = () => {
               <CustomInput
                 input={{
                   id: shortedUrlId,
-                  label: "Shorted URL",
-                  placeholder: "...",
+                  label: "shortener.fileds.shortedUrl.label",
+                  placeholder: "shortener.fileds.shortedUrl.placeholder",
                   type: InputType.text,
                   size: InputSize.xlarge,
                   clearable: false,
@@ -122,13 +130,14 @@ const Shortener = () => {
           <div className={"actions"}>
             <CustomButton
               button={{
-                label: "Short",
+                label: "shortener.actions.short.label",
+                title: disabledShortenUrl
+                  ? "shortener.actions.short.disabledTitle"
+                  : "shortener.actions.short.title",
                 color: ButtonColor.primary,
                 accesKey: "S",
                 tabIndex: 2,
-                disabled: !new RegExp(REGEX.SHORTENER_URL).test(
-                  SHORTENER.ALLOWED_PROTOCOL + url
-                ),
+                disabled: disabledShortenUrl,
                 icon: <Icon icon="ic:twotone-add-link" inline={true} />,
                 onPress: shortenerUrl,
               }}
@@ -136,7 +145,11 @@ const Shortener = () => {
 
             <CustomButton
               button={{
-                label: "Copy",
+                label: "shortener.actions.copy.label",
+                title:
+                  shortedUrl.toString().trim().length === 0
+                    ? "shortener.actions.copy.disabledTitle"
+                    : "shortener.actions.copy.title",
                 color: ButtonColor.primary,
                 accesKey: "C",
                 tabIndex: 2,

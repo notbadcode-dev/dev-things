@@ -6,8 +6,8 @@
         "inline": "true"
       },
       "route": "/generate-qr",
-      "title": "QR Code",
-      "description": "Geneare QR Code With additional information"
+      "title": "app.cards.generatorQr.title",
+      "description": "app.cards.generatorQr.description"
     }, {
       "id": "shortener",
       "icon": {
@@ -15,7 +15,7 @@
         "inline": "true"
       },
       "route": "/shortener",
-      "title": "Shortener",
-      "description": "Shorten a URL for easier sharing."
+      "title": "app.cards.shortener.title",
+      "description": "app.cards.shortener.description"
     }
 ]

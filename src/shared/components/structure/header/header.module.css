@@ -1,14 +1,8 @@
-.header {
-  display: flex;
-  justify-content: center;
-}
-
 .title {
   text-align: center;
   margin: 0;
   line-height: 1.15;
   font-size: 3rem;
-  padding: 2rem 0 1.5rem 0;
 }
 
 .title a {
@@ -28,8 +22,12 @@
   top: 0.2rem;
 }
 
-@media only screen and (max-width: 340px) and (min-width: 5px) {
+@media only screen and (max-width: 460px) and (min-width: 5px) {
   .title {
-    font-size: 3vh;
+    font-size: 1.8rem;
+  }
+
+  .title a span {
+    font-size: 0.4em;
   }
 }

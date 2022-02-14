@@ -6,7 +6,7 @@ import CardList from "../shared/components/cards/card-list/card-list.component";
 
 import { ICard } from "../shared/models/card.model";
 
-const CARD_LIST: ICard[] = require("../json/card-list.json");
+const CARD_LIST: ICard[] = require("../shared/json/card-list.json");
 
 const Home: NextPage = () => {
   return (

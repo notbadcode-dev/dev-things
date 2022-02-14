@@ -1,0 +1,65 @@
+{
+    "app": {
+        "title": "",
+        "cards": {
+            "generatorQr": {
+                "title": "QR Code",
+                "description": "Generate QR Code with any text or url."
+            },
+            "shortener": {
+                "title": "Shortener",
+                "description": "Shorten URLs for easier sharing."
+            }
+        },
+        "eg": {
+            "url": "eg. www.website.notbadcode.xyz",
+            "text": "eg. any text",
+            "wifi": "eg. password wifi"
+        }
+    },
+    "generatorQr": {
+        "title": "QR Code",
+        "fields": {
+            "qrCodeContent": {
+                "label": "QR Code content",
+                "placeholder": ""
+            }
+        },
+        "actions": {
+            "download": {
+                "label": "Download",
+                "title": "Download QR Code generated",
+                "disabledTitle": "Necessary to inform content to download"
+            }
+        }
+    },
+    "shortener": {
+        "title": "Shortener",
+        "fileds": {
+            "urlToShort": {
+                "label": "URL to shorten",
+                "placeholder": ""
+            },
+            "shortedUrl": {
+                "label": "Shorted URL",
+                "placeholder": "..."
+            }
+        },
+        "actions": {
+            "short": {
+                "label": "Short",
+                "title": "Shorten entered URL",
+                "disabledTitle": "Necessary to inform a valid URL to shorten"
+            },
+            "copy": {
+                "label": "Copy",
+                "title": "Copy generated URL",
+                "disabledTitle": "Need to generate shorted URL"
+            }
+        },
+        "messages": {
+            "addClipboardSucces": "Copied to clipboard",
+            "addClipboardError": "A problem occurred, try to copy manually"
+        }
+    }
+  }

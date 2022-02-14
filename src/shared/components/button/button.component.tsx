@@ -1,51 +1,74 @@
-import { Icon } from "@iconify/react";
-import React, { ReactElement } from "react";
+import React from "react";
+import { Tooltip, useTheme } from "@nextui-org/react";
+import { useTranslation } from "react-i18next";
 
-import { Button, ButtonHelper } from "../../models/button.model";
+import { ButtonBase, ButtonHelper } from "../../models/button.model";
 
 import styles from "./button.module.css";
 
 type Props = {
-  button: Button;
+  button: ButtonBase;
 };
 
 const CustomButton: React.FC<Props> = ({ button }) => {
+  const { t } = useTranslation();
+  const { isDark } = useTheme();
   button = ButtonHelper.mapObject(button);
+
+  const translateTitle: string = button.title ?? "";
+  const translateLabel: string = button.label;
 
   const renderButton: any = (
     <>
-      <button
-        type={button.type}
-        className={"ripple button " + button.className + " " + styles.button}
-        data-disabled={button.disabled}
-        data-color={button.color}
-        title={button.title}
-        tabIndex={button.tabIndex}
-        accessKey={button.accesKey}
-        disabled={button.disabled}
-        onClick={button.onPress}
+      <Tooltip
+        content={t(translateTitle)}
+        visible={!button.disabled}
+        placement="top"
+        color={isDark ? "invert" : "default"}
+        rounded
       >
-        <span>{button.label}</span>
-      </button>
+        <button
+          type={button.type}
+          className={"ripple button " + button.className + " " + styles.button}
+          data-disabled={button.disabled}
+          data-color={button.color}
+          title={t(translateTitle)}
+          tabIndex={button.tabIndex}
+          accessKey={button.accesKey}
+          disabled={button.disabled}
+          onClick={button.onPress}
+        >
+          <span>{t(translateLabel)}</span>
+        </button>
+      </Tooltip>
     </>
   );
 
   const renderButtonWithIcon: any = (
     <>
-      <button
-        type={button.type}
-        className={"ripple button " + button.className + " " + styles.button}
-        data-disabled={button.disabled}
-        data-color={button.color}
-        title={button.title}
-        tabIndex={button.tabIndex}
-        accessKey={button.accesKey}
-        disabled={button.disabled}
-        onClick={button.onPress}
+      <Tooltip
+        content={t(translateTitle)}
+        visible={!button.disabled}
+        placement="top"
+        color={isDark ? "default" : "default"}
+        contentColor={isDark ? "primary" : "default"}
+        rounded
       >
-        {button.icon}
-        <span>{button.label}</span>
-      </button>
+        <button
+          type={button.type}
+          className={"ripple button " + button.className + " " + styles.button}
+          data-disabled={button.disabled}
+          data-color={button.color}
+          title={t(translateTitle)}
+          tabIndex={button.tabIndex}
+          accessKey={button.accesKey}
+          disabled={button.disabled}
+          onClick={button.onPress}
+        >
+          {button.icon}
+          <span>{t(translateLabel)}</span>
+        </button>
+      </Tooltip>
     </>
   );
 

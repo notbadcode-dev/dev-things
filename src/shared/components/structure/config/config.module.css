@@ -1,0 +1,79 @@
+.webConfigContainer {
+  position: fixed !important;
+  top: 1rem !important;
+  right: 2rem !important;
+  width: 3rem !important;
+  height: 3rem !important;
+  border: 0.1rem solid var(--border-color) !important;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  cursor: pointer;
+  transform: scale3d(1) !important;
+  background-color: var(--background) !important;
+
+  outline: transparent;
+  -webkit-tap-highlight-color: transparent;
+
+  transition: border-color 0.15s ease, transform 0.3s ease;
+  -moz-transition: border-color 0.15s ease, transform 0.3s ease;
+  -o-transition: border-color 0.15s ease, transform 0.3s ease;
+  -webkit-transition: border-color 0.15s ease, transform 0.3s ease;
+}
+
+.webConfigContainer:hover {
+  transform: scale3d(1.04) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.webConfigContainer[data-open="false"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.webConfigContainer[data-open="true"] {
+  width: 12rem !important;
+  height: 10rem !important;
+}
+
+.webConfigContainer[data-open="true"] svg[data-visible="true"] {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+}
+
+.webConfigContainer div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.webConfigContainer div[data-visible="true"],
+.webConfigContainer svg[data-visible="true"] {
+  display: block;
+}
+
+.webConfigContainer div[data-visible="false"],
+.webConfigContainer svg[data-visible="false"] {
+  display: none;
+}
+
+.webConfigContainer div svg {
+  transform: scale(1.5);
+  filter: var(--primary-color-filter);
+}
+
+.webConfigContainer div svg {
+  transform: scale(1.5);
+  filter: var(--primary-color-filter);
+}
+
+@media only screen and (max-width: 460px) and (min-width: 5px) {
+  .webConfigContainer {
+    top: 0.5rem !important;
+    right: 1rem !important;
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+}

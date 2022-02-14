@@ -3,7 +3,7 @@ import { ButtonColor, ButtonType } from "../enums/button.enum";
 
 const unnamedButton: string = "unnamed";
 
-export class Button {
+export class ButtonBase {
   constructor(
     public label: string,
     public color:
@@ -27,8 +27,8 @@ export class Button {
 }
 
 export class ButtonHelper {
-  static mapObject(object: Button): Button {
-    return new Button(
+  static mapObject(object: ButtonBase): ButtonBase {
+    return new ButtonBase(
       object.label && object.label.length > 0 ? object.label : unnamedButton,
       object.color ?? ButtonColor.primary,
       object.onPress,

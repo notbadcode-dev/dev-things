@@ -1,6 +1,7 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import styles from "./module-header.module.css";
+import { useTranslation } from "react-i18next";
 
 import { IHeaderModule } from "../../../models/header-module.model";
 
@@ -9,6 +10,10 @@ type Props = {
 };
 
 const HeaderModule: React.FC<Props> = ({ header: data }) => {
+  const { t } = useTranslation();
+
+  const translateTitle: string = data.title;
+
   return (
     <div className={styles.title}>
       <Icon
@@ -16,7 +21,7 @@ const HeaderModule: React.FC<Props> = ({ header: data }) => {
         inline={data.iconInline}
         data-filter={data.iconFilterStyle}
       />
-      <span>{data.title}</span>
+      <span>{t(translateTitle)}</span>
     </div>
   );
 };

@@ -7,22 +7,27 @@ body {
   margin: 0;
   font-family: var(--defaults-fonts);
   font-size: 4vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+html[data-theme="dark-theme"] {
+  --background: var(--background-dark-mode);
+
+  --primary-color-base: var(--primary-color-dark-mode-base);
+  --primary-color-filter: var(--primary-color-dark-mode-filter);
+
+  --input-text-color: var(--input-text-color-dark-mode);
 }
 
 header {
-  position: sticky;
+  position: inherit;
   top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: -webkit-sticky;
-  backdrop-filter: var(--header-back-drop-filter);
-  -webkit-backdrop-filter: var(--header-back-drop-filter);
-  background: var(--header-background-color);
-  height: 4rem;
+  background-color: var(--background);
+  height: 5.5rem;
+  z-index: 999999 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 a {
@@ -39,4 +44,23 @@ a {
   justify-content: center;
   align-items: flex-start;
   border-top: 1px solid var(--border-color);
+
+  outline: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input,
+textarea,
+button,
+select,
+a,
+*[role="button"] .actions {
+  outline: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media only screen and (max-width: 340px) and (min-width: 5px) {
+  header {
+    justify-content: center;
+  }
 }

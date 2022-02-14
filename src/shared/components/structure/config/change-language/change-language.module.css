@@ -1,0 +1,22 @@
+.groupButton {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.groupButton button {
+  border-color: var(--border-color);
+  border-radius: var(--border-radius);
+}
+
+.groupButton button[data-active="true"],
+.groupButton button:not(.active):hover {
+  color: var(--white-color);
+  background-color: var(--primary-color-50);
+}
+
+@media only screen and (max-width: 460px) and (min-width: 5px) {
+  .groupButton button {
+    border-width: var(--border-color);
+    border-radius: var(--border-radius);
+  }
+}

@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react";
 import { Grid } from "@nextui-org/react";
 import { useState } from "react";
+import { isMobile } from "react-device-detect";
 import QRCode from "react-qr-code";
 
 import { APP_EG } from "../../shared/constants/eg.constant";
@@ -46,21 +47,21 @@ const GenerateQr = () => {
 
   return (
     <>
-      <Grid.Container gap={4}>
+      <Grid.Container gap={4} justify="center">
         <Grid xs={12} justify="center">
           <HeaderModule
             header={{
               icon: "ph:qr-code-duotone",
               iconInline: true,
               iconFilterStyle: true,
-              title: "Generate QR Code",
+              title: "generatorQr.title",
             }}
           ></HeaderModule>
         </Grid>
 
         <Grid xs={12} justify="center">
           <div className={styles.qrCode}>
-            <QRCode id="QRCode" value={value} />
+            <QRCode id="QRCode" value={value} size={isMobile ? 96 : 192} />
           </div>
         </Grid>
 
@@ -69,7 +70,7 @@ const GenerateQr = () => {
             <Grid xs={12} sm={6} md={4} justify="center">
               <CustomInput
                 input={{
-                  label: "QR Code content",
+                  label: "generatorQr.fields.qrCodeContent.label",
                   placeholder: inputEg,
                   type: InputType.text,
                   size: InputSize.xlarge,
@@ -86,7 +87,11 @@ const GenerateQr = () => {
           <div className={"actions"}>
             <CustomButton
               button={{
-                label: "Download",
+                label: "generatorQr.actions.download.label",
+                title:
+                  value.toString().trim().length === 0
+                    ? "generatorQr.actions.download.disabledTitle"
+                    : "generatorQr.actions.download.title",
                 color: ButtonColor.primary,
                 accesKey: "G",
                 tabIndex: 2,

@@ -1,5 +1,6 @@
 import React from "react";
 import { Input } from "@nextui-org/react";
+import { useTranslation } from "react-i18next";
 
 import { BaseInput, BaseInputHelper } from "../../models/input.model";
 
@@ -10,7 +11,11 @@ type Props = {
 };
 
 const CustomInput: React.FC<Props> = ({ input: data }) => {
+  const { t } = useTranslation();
   data = BaseInputHelper.mapObject(data);
+
+  const translateLabel: string = data.label;
+  const translatePlaceholder: string = data.placeholder ?? "";
 
   return (
     <>
@@ -19,8 +24,8 @@ const CustomInput: React.FC<Props> = ({ input: data }) => {
         bordered
         rounded={false}
         className={styles.input}
-        label={data.label}
-        placeholder={data.placeholder}
+        label={t(translateLabel)}
+        placeholder={t(translatePlaceholder)}
         value={data.value}
         color="primary"
         fullWidth={true}

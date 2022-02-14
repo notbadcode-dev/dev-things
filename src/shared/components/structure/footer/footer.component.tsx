@@ -6,8 +6,12 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div>
-        Develop with{" "}
-        <Icon icon="ant-design:heart-twotone" className={styles.iconHeart} /> by
+        <span> Develop with </span>
+        <Icon
+          icon="ant-design:heart-twotone"
+          className={styles.iconHeart}
+        />{" "}
+        <span>by</span>
         <span className={styles.by}> notBadCode</span>.
       </div>
     </footer>
