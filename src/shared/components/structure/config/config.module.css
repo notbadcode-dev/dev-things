@@ -12,12 +12,11 @@
   background-color: var(--background) !important;
 
   outline: transparent;
-  -webkit-tap-highlight-color: transparent;
 
-  transition: border-color 0.15s ease, transform 0.3s ease;
   -moz-transition: border-color 0.15s ease, transform 0.3s ease;
   -o-transition: border-color 0.15s ease, transform 0.3s ease;
   -webkit-transition: border-color 0.15s ease, transform 0.3s ease;
+  transition: border-color 0.15s ease, transform 0.3s ease;
 }
 
 .webConfigContainer:hover {

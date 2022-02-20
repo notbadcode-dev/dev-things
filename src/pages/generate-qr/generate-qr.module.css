@@ -3,8 +3,8 @@
   background-color: var(--white-color);
   border-radius: 0.75rem;
   border: 0.25rem solid var(--border-color);
-  width: fit-content;
   width: -moz-fit-content;
+  width: fit-content;
 }
 
 .qrCode :first-child {

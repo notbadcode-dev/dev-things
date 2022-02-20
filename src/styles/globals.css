@@ -19,9 +19,9 @@ html[data-theme="dark-theme"] {
 }
 
 header {
-  position: inherit;
-  top: 0;
   position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   background-color: var(--background);
   height: 5.5rem;
   z-index: 999999 !important;
@@ -37,6 +37,8 @@ a {
 
 * {
   box-sizing: border-box;
+  -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */ /* prevent webkit from resizing text to fit */
+  -webkit-tap-highlight-color: transparent; /* prevent tap highlight color / shadow */ /* prevent copy paste, to allow, change 'none' to 'text' */
 }
 
 .actions {
@@ -44,9 +46,7 @@ a {
   justify-content: center;
   align-items: flex-start;
   border-top: 1px solid var(--border-color);
-
   outline: transparent;
-  -webkit-tap-highlight-color: transparent;
 }
 
 input,
@@ -56,7 +56,6 @@ select,
 a,
 *[role="button"] .actions {
   outline: transparent;
-  -webkit-tap-highlight-color: transparent;
 }
 
 @media only screen and (max-width: 340px) and (min-width: 5px) {

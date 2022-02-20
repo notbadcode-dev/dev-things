@@ -24,10 +24,10 @@
     transform 0.3s ease, box-shadow 0.7s ease;
 
   background-position: center;
-  transition: background 0.8s;
+  -webkit-transition: background 0.8s;
   -moz-transition: background 0.8s;
   -o-transition: background 0.8s;
-  -webkit-transition: background 0.8s;
+  transition: background 0.8s;
 }
 
 .button[data-color][data-disabled="false"]:hover {
