@@ -1,4 +1,5 @@
 {
+  "homepage":"https://yourusername.github.io/repository-name",
   "name": "dev-things",
   "private": true,
   "main": "pages/home/index.tsx",
@@ -6,6 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "deploy": "gh-pages -d build",
     "lint": "eslint --fix"
   },
   "dependencies": {

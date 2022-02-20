@@ -15,9 +15,6 @@
     "plugin:prettier/recommended",
     "prettier"
   ],
-  "hints": {
-    "compat-api/css": "off"
-  },
   "settings": {
     "import/resolver": {
       "node": {
