@@ -1,15 +1,17 @@
 {
-  "homepage": "https://notbadcode-dev.github.io/dev-things",
+  "homepage": "https://notbadcode-dev.github.io/dev-things/",
   "name": "dev-things",
   "private": true,
   "main": "pages/home/index.tsx",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export -o build && npm run replaceFilePaths",
     "start": "next start",
-    "export": "next export",
+    "export": "next export -o build && npm run replaceFilePaths",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "lint": "eslint --fix"
+    "lint": "eslint --fix",
+    "replaceFilePaths": "node ./replacer.js"
   },
   "dependencies": {
     "@nextui-org/react": "1.0.2-beta.3",
@@ -48,6 +50,7 @@
     "gh-pages": "^3.2.3",
     "hint": "^6.1.9",
     "postcss": "8.3.5",
+    "replace-in-file": "^6.3.2",
     "typescript": "4.5.5"
   }
 }
