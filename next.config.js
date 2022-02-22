@@ -1,13 +1,9 @@
 const isProd = process.env.NODE_ENV === 'production'
-
-const path = require('path')
+const withCSS = require('@zeit/next-css')
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-    env: {
-        PUBLIC_URL: "https://notbadcode-dev.github.io/dev-things/",
-        assetPrefix: './'
-    }
-}
+const nextConfig = withCSS({
+    cssModules: true  // After true than use import statement in next.js
+    })
 
 module.exports = nextConfig
