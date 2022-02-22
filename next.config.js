@@ -1,9 +1,42 @@
-const isProd = process.env.NODE_ENV === 'production'
-const withCSS = require('@zeit/next-css')
+const path = require('path');
+const withPlugins = require('next-compose-plugins');
+const withCSS = require('@zeit/next-css');
 
-/** @type {import('next').NextConfig} */
-const nextConfig = withCSS({
-    cssModules: true  // After true than use import statement in next.js
-    })
+const nextConfig = {
+  trailingSlash: false,
+  poweredByHeader: false,
+  webpack(config, options) {
+    const { isServer } = options;
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@components': path.resolve('./components'),
+      '@public': path.resolve('./public'),
+      '@redux': path.resolve('./redux'),
+      '@utils': path.resolve('./utils'),
+    };
 
-module.exports = nextConfig
+    config.module.rules.push({
+      test: /\.(woff|woff2|eot|ttf|otf)$/,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            name: '[name]-[hash:8].[ext]',
+            publicPath: (url) => {
+              return `/_next/static/css/${url}`;
+            },
+            outputPath: `${isServer ? '../' : ''}static/css/`,
+            esModule: false,
+          },
+        },
+      ],
+    });
+
+    return config;
+  },
+};
+
+module.exports = withPlugins(
+  [withCSS],
+  nextConfig,
+);
