@@ -22,7 +22,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install packages 🔧
-        run: npm ci
+        run: npm ci && npm build && npm export
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
