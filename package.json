@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export && npm run replaceFilePaths && touch out/.nojekyll",
+    "export": "next export && touch out/.nojekyll",
     "build-ssg": "next build && next export && touch out/.nojekyll",
     "deploy": "gh-pages -d out -t true",
     "replaceFilePaths": "node ./replacer.js"
