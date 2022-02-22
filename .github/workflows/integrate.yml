@@ -2,41 +2,33 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [master]
+  pull_requests:
+    branches: [master]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      NEXT_PUBLIC_BASE_PATH: /notbadcode-dev/dev-things
-
     strategy:
       matrix:
         node-version: [14.x]
     steps:
-      - name: Get files
+      - name: Checkout 🔔
         uses: actions/checkout@v2
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install packages
+      - name: Install packages 🔧
         run: npm ci
 
-      - name: Build project
-        run: npm run build
-
-      - name: Export static files
-        run: npm run export
-
-      - name: Add .nojekyll file
-        run: touch ./out/.nojekyll
-
-      - name: Deploy
+      - name: Deploy 🚀
         uses: notbadcode-dev/dev-things@v1.0.0
         with:
-          branch: gh-pages
-          folder: out
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLTER: out
+          CLEAN: true

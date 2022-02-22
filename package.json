@@ -5,19 +5,22 @@
   "main": "pages/home/index.tsx",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export -o build && npm run replaceFilePaths",
+    "build": "next build && next export -o build && npm run copyNojekyll && npm run replaceFilePaths",
     "start": "next start",
     "export": "next export -o build && npm run replaceFilePaths",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "lint": "eslint --fix",
-    "replaceFilePaths": "node ./replacer.js"
+    "replaceFilePaths": "node ./replacer.js",
+    "copyNojekyll": "cp .nojekyll ./build/_next"
   },
   "dependencies": {
     "@nextui-org/react": "1.0.2-beta.3",
+    "css-loader": "^6.6.0",
     "jquery": "3.6.0",
     "next": "12.0.9",
     "next-themes": "^0.0.15",
+    "postcss-loader": "^6.2.1",
     "prop-types": "15.8.1",
     "qr.js": "0.0.0",
     "react": "17.0.2",
@@ -26,7 +29,8 @@
     "react-i18next": "^11.15.4",
     "react-qr-code": "2.0.3",
     "react-toast-notifications": "2.5.1",
-    "sass": "1.49.7"
+    "sass": "1.49.7",
+    "style-loader": "^3.3.1"
   },
   "devDependencies": {
     "@iconify/react": "3.1.3",
@@ -49,6 +53,7 @@
     "eslint-plugin-react": "7.24.0",
     "gh-pages": "^3.2.3",
     "hint": "^6.1.9",
+    "mini-css-extract-plugin": "^2.5.3",
     "postcss": "8.3.5",
     "replace-in-file": "^6.3.2",
     "typescript": "4.5.5"
