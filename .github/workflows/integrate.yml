@@ -9,11 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [14.x]
-
     steps:
       - name: Checkout 🔔
         uses: actions/checkout@v2
@@ -26,10 +24,10 @@ jobs:
       - name: Install packages 🔧
         run: npm ci
 
-      - name: Deploy 🚀
-        uses: notbadcode-dev/dev-things@v1.0.0
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLTER: out
-          CLEAN: true
+      # - name: Deploy 🚀
+      #   uses: notbadcode-dev/dev-things@v1.0.0
+      #   with:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     BRANCH: gh-pages
+      #     FOLTER: out
+      #     CLEAN: true
