@@ -5,14 +5,11 @@
   "main": "pages/home/index.tsx",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export -o build && npm run copyNojekyll && npm run replaceFilePaths",
+    "build": "next build",
     "start": "next start",
-    "export": "next export -o build && npm run replaceFilePaths",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "lint": "eslint --fix",
-    "replaceFilePaths": "node ./replacer.js",
-    "copyNojekyll": "cp .nojekyll ./build/_next"
+    "export": "next export && touch out/.nojekyll",
+    "build-ssg": "next build && next export && touch out/.nojekyll",
+    "deploy": "gh-pages -d out -t true"
   },
   "dependencies": {
     "@nextui-org/react": "1.0.2-beta.3",
