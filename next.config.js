@@ -3,6 +3,8 @@ const withPlugins = require('next-compose-plugins');
 const withCSS = require('@zeit/next-css');
 
 const nextConfig = {
+    basePath: process.env.NEXT_PUBLIC_BASE_PATH,
+    assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH,
   trailingSlash: false,
   poweredByHeader: false,
   webpack(config, options) {
