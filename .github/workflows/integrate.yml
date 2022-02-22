@@ -25,7 +25,7 @@ jobs:
         run: npm ci
 
       - name: Run Build 🔧
-        run: npm run build && npm run export && npm run deploy
+        run: npm run build
 
       - name: Run Export 🔧
         run: npm run export
