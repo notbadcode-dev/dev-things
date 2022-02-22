@@ -22,9 +22,18 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install packages 🔧
-        run: npm ci && npm run build && npm run export && npm run deploy
+        run: npm ci
 
-      - name: Deploy 🚀
+      - name: Run Build 🔧
+        run: npm run build && npm run export && npm run deploy
+
+      - name: Run Export 🔧
+        run: npm run export
+
+      - name: Run Deploy 🔧
+        run: npm run deploy
+
+      - name: Deploy GH Pages 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
