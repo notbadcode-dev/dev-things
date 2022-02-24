@@ -4,6 +4,6 @@
     "arrowParens": "avoid",
     "trailingComma": "es5",
     "endOfLine": "auto",
-    "tabWidth": 2,
+    "tabWidth": 4,
     "useTabs": false
 }
