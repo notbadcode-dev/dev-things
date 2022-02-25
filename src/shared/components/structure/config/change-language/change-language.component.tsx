@@ -13,29 +13,21 @@ const ChangeLanguage = () => {
 
   return (
     <>
-      <Grid.Container gap={0}>
-        <Grid>
-          <Button.Group
-            size="sm"
-            color="primary"
-            bordered
-            className={styles.groupButton}
-          >
-            <Button
-              onClick={() => changeTranslation("es")}
-              data-active={i18n.language.trim().toLowerCase() === "es"}
-            >
-              ES
-            </Button>
-            <Button
-              onClick={() => changeTranslation("en")}
-              data-active={i18n.language.trim().toLowerCase() === "en"}
-            >
-              EN
-            </Button>
-          </Button.Group>
-        </Grid>
-      </Grid.Container>
+      <div>
+        <button
+          title={i18n.language.trim()}
+          onClick={() => changeTranslation("es")}
+          data-active={i18n.language.trim().toLowerCase() === "es"}
+        ></button>
+      </div>
+
+      <div>
+        <button
+          title={i18n.language.trim()}
+          onClick={() => changeTranslation("en")}
+          data-active={i18n.language.trim().toLowerCase() === "en"}
+        ></button>
+      </div>
     </>
   );
 };

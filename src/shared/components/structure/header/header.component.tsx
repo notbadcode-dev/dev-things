@@ -9,25 +9,23 @@ import Config from "../config/config.component";
 const Header = () => {
   return (
     <>
-      <Grid.Container justify="center" alignContent="center">
-        <Grid>
-          <h1 className={styles.title}>
-            <Link href="/">
-              <a>
-                Dev{" "}
-                <Icon
-                  icon="clarity:internet-of-things-line"
-                  inline={true}
-                  className={styles.iconThings}
-                />{" "}
-                things! <span>(Beta)</span>
-              </a>
-            </Link>
-          </h1>
+      <div>
+        <h1 className={styles.title}>
+          <Link href="/">
+            <a>
+              Dev{" "}
+              <Icon
+                icon="clarity:internet-of-things-line"
+                inline={true}
+                className={styles.iconThings}
+              />{" "}
+              things! <span>(Beta)</span>
+            </a>
+          </Link>
+        </h1>
 
-          <Config></Config>
-        </Grid>
-      </Grid.Container>
+        <Config></Config>
+      </div>
     </>
   );
 };

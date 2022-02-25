@@ -33,39 +33,7 @@ const Config = () => {
 
   return (
     <>
-      <Card
-        id={webConfigCardId}
-        className={styles.webConfigContainer}
-        onClick={openConfig}
-        data-open={toggleConfig}
-      >
-        <Icon
-          id={webConfigCardIconGearId}
-          data-visible={true}
-          icon="ph:gear-six-duotone"
-        />
-
-        <Icon
-          id={webConfigCardIconTimesId}
-          className={"iconTimes"}
-          data-visible={false}
-          icon="uim:times-circle"
-        />
-
-        <Grid.Container
-          gap={2}
-          id={webConfigCardContentId}
-          data-visible={toggleConfig}
-        >
-          <Grid>
-            <ChangeLanguage></ChangeLanguage>
-          </Grid>
-
-          <Grid>
-            <ChangeTheming></ChangeTheming>
-          </Grid>
-        </Grid.Container>
-      </Card>
+      <span>CONFIG</span>
     </>
   );
 };

@@ -1,5 +1,4 @@
 import React from "react";
-import { Input } from "@nextui-org/react";
 import { useTranslation } from "react-i18next";
 
 import { BaseInput, BaseInputHelper } from "../../models/input.model";
@@ -19,7 +18,8 @@ const CustomInput: React.FC<Props> = ({ input: data }) => {
 
   return (
     <>
-      <Input
+      <input type="text" placeholder="x" />
+      {/* <Input
         clearable={data.clearable}
         bordered
         rounded={false}
@@ -39,7 +39,7 @@ const CustomInput: React.FC<Props> = ({ input: data }) => {
         onBlur={data.onBlur}
         onFocus={data.onFocus}
         onChange={data.onChange}
-      />
+      /> */}
     </>
   );
 };

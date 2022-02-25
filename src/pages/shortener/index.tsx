@@ -81,86 +81,81 @@ const Shortener = () => {
 
   return (
     <>
-      <Grid.Container gap={6}>
-        <Grid xs={12} justify="center">
-          <HeaderModule
-            header={{
-              icon: "ic:twotone-add-link",
-              iconInline: true,
-              iconFilterStyle: false,
-              title: "shortener.title",
+      <div>
+        <HeaderModule
+          header={{
+            icon: "ic:twotone-add-link",
+            iconInline: true,
+            iconFilterStyle: false,
+            title: "shortener.title",
+          }}
+        ></HeaderModule>
+      </div>
+
+      <div>
+        <CustomInput
+          input={{
+            label: "shortener.fileds.urlToShort.label",
+            placeholder: APP_EG.URL,
+            labelLeft: SHORTENER.ALLOWED_PROTOCOL,
+            type: InputType.text,
+            size: InputSize.xlarge,
+            value: url,
+            onChange: onChangeShortenerUrl,
+          }}
+        ></CustomInput>
+      </div>
+
+      <div>
+        <CustomInput
+          input={{
+            id: shortedUrlId,
+            label: "shortener.fileds.shortedUrl.label",
+            placeholder: "shortener.fileds.shortedUrl.placeholder",
+            type: InputType.text,
+            size: InputSize.xlarge,
+            clearable: false,
+            disabled: true,
+            value: shortedUrl,
+            onChange: onChangeShortedUrl,
+          }}
+        ></CustomInput>
+      </div>
+
+      <div>
+        <div className={"actions"}>
+          <CustomButton
+            button={{
+              label: "shortener.actions.short.label",
+              title: disabledShortenUrl
+                ? "shortener.actions.short.disabledTitle"
+                : "shortener.actions.short.title",
+              color: ButtonColor.primary,
+              accesKey: "S",
+              tabIndex: 2,
+              disabled: disabledShortenUrl,
+              icon: <Icon icon="ic:twotone-add-link" inline={true} />,
+              onPress: shortenerUrl,
             }}
-          ></HeaderModule>
-        </Grid>
+          ></CustomButton>
 
-        <Grid xs={12} justify="center">
-          <Grid.Container gap={2} justify="center">
-            <Grid xs={10} sm={6} md={4} justify="center">
-              <CustomInput
-                input={{
-                  label: "shortener.fileds.urlToShort.label",
-                  placeholder: APP_EG.URL,
-                  labelLeft: SHORTENER.ALLOWED_PROTOCOL,
-                  type: InputType.text,
-                  size: InputSize.xlarge,
-                  value: url,
-                  onChange: onChangeShortenerUrl,
-                }}
-              ></CustomInput>
-            </Grid>
-            <Grid xs={10} sm={6} md={4} justify="center">
-              <CustomInput
-                input={{
-                  id: shortedUrlId,
-                  label: "shortener.fileds.shortedUrl.label",
-                  placeholder: "shortener.fileds.shortedUrl.placeholder",
-                  type: InputType.text,
-                  size: InputSize.xlarge,
-                  clearable: false,
-                  disabled: true,
-                  value: shortedUrl,
-                  onChange: onChangeShortedUrl,
-                }}
-              ></CustomInput>
-            </Grid>
-          </Grid.Container>
-        </Grid>
-
-        <Grid xs={12} justify="center">
-          <div className={"actions"}>
-            <CustomButton
-              button={{
-                label: "shortener.actions.short.label",
-                title: disabledShortenUrl
-                  ? "shortener.actions.short.disabledTitle"
-                  : "shortener.actions.short.title",
-                color: ButtonColor.primary,
-                accesKey: "S",
-                tabIndex: 2,
-                disabled: disabledShortenUrl,
-                icon: <Icon icon="ic:twotone-add-link" inline={true} />,
-                onPress: shortenerUrl,
-              }}
-            ></CustomButton>
-
-            <CustomButton
-              button={{
-                label: "shortener.actions.copy.label",
-                title:
-                  shortedUrl.toString().trim().length === 0
-                    ? "shortener.actions.copy.disabledTitle"
-                    : "shortener.actions.copy.title",
-                color: ButtonColor.primary,
-                accesKey: "C",
-                tabIndex: 2,
-                disabled: shortedUrl.toString().trim().length === 0,
-                icon: <Icon icon="ic:twotone-copy-all" />,
-                onPress: copyShortURL,
-              }}
-            ></CustomButton>
-          </div>
-        </Grid>
-      </Grid.Container>
+          <CustomButton
+            button={{
+              label: "shortener.actions.copy.label",
+              title:
+                shortedUrl.toString().trim().length === 0
+                  ? "shortener.actions.copy.disabledTitle"
+                  : "shortener.actions.copy.title",
+              color: ButtonColor.primary,
+              accesKey: "C",
+              tabIndex: 2,
+              disabled: shortedUrl.toString().trim().length === 0,
+              icon: <Icon icon="ic:twotone-copy-all" />,
+              onPress: copyShortURL,
+            }}
+          ></CustomButton>
+        </div>
+      </div>
     </>
   );
 };
