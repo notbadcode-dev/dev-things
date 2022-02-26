@@ -1,9 +1,10 @@
 import React from "react";
 import { Icon } from "@iconify/react";
-import styles from "./module-header.module.css";
 import { useTranslation } from "react-i18next";
 
 import { IHeaderModule } from "../../../models/header-module.model";
+
+import styles from "./module-header.module.scss";
 
 type Props = {
   header: IHeaderModule;

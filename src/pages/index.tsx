@@ -1,10 +1,10 @@
 import { NextPage } from "next";
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
-
 import CardList from "../shared/components/cards/card-list/card-list.component";
 
 import { ICard } from "../shared/models/card.model";
+
+import styles from "../styles/Home.module.scss";
 
 const CARD_LIST: ICard[] = require("../shared/json/card-list.json");
 

@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 import { ICard } from "../../../models/card.model";
 
-import styles from "./card.module.css";
+import styles from "./card.module.scss";
 
 type Props = {
   card: ICard;
@@ -20,12 +20,12 @@ const Card: React.FC<Props> = ({ card }) => {
   return (
     <Link href={card.route}>
       <a className={styles.card}>
-        <div className={styles.content}>
+        <div>
           <h2>{t(translateTitle)}</h2>
           <p>{t(translateDescription)}</p>
         </div>
 
-        <div className={styles.iconCard}>
+        <div>
           <>
             <Icon
               icon={card.icon.value}

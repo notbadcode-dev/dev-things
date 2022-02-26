@@ -4,7 +4,6 @@
   right: 2rem !important;
   width: 3rem !important;
   height: 3rem !important;
-  border: 0.1rem solid var(--border-color) !important;
   border-radius: var(--border-radius);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
   cursor: pointer;

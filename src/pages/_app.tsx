@@ -5,17 +5,20 @@ import Header from "../shared/components/structure/header/header.component";
 import Footer from "../shared/components/structure/footer/footer.component";
 
 import "../i18n/config";
-import "../styles/globals.css";
+import "../styles/globals.scss";
+import { APP } from "../shared/constants/app.constant";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <ToastProvider autoDismiss={true}>
-        <header>
+        <header id={APP.ELEMENT.HEADER_ID}>
           <Header></Header>
         </header>
         <Component {...pageProps} />
-        <Footer></Footer>
+        <footer id={APP.ELEMENT.FOOTER_ID}>
+          <Footer></Footer>
+        </footer>
       </ToastProvider>
     </>
   );

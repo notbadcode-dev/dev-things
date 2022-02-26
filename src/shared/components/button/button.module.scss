@@ -1,0 +1,156 @@
+$transition-button: color 0.15s ease, border-color 0.15s ease,
+  transform 0.3s ease, box-shadow 0.7s ease;
+$transition-background-button: background 0.8s;
+$transition-background-button-disabled: background 0s;
+$cursor-button-disabled: not-allowed;
+$background-size-button: 100%;
+$background-button-primary: var(--primary-color-button-90)
+  radial-gradient(
+    circle,
+    transparent 1%,
+    var(--primary-color-button-40) 1%,
+    var(--primary-color-button-60) 1%
+  )
+  center/15000%;
+$background-button-secondary: var(--secondary-color-90)
+  radial-gradient(
+    circle,
+    transparent 1%,
+    var(--secondary-color-40) 1%,
+    var(--secondary-color-60) 1%
+  )
+  center/15000%;
+$background-button-danger: var(--danger-color-90)
+  radial-gradient(
+    circle,
+    transparent 1%,
+    var(--danger-color-40) 1%,
+    var(--danger-color-60) 1%
+  )
+  center/15000%;
+$scale3d-button: 1.01;
+$transition-scale3d-button: scale3d(
+  $scale3d-button,
+  $scale3d-button,
+  $scale3d-button
+);
+
+$box-shadow-gradient-button: 0px 15px 9px -12px;
+$box-shadow-gradient-disabled-button: 0 0 4px;
+$box-shadow-button-primary: $box-shadow-gradient-button
+  var(--primary-color-button-70);
+$box-shadow-button-secondary: $box-shadow-gradient-button
+  var(--secondary-color-button-70);
+$box-shadow-button-danger: $box-shadow-gradient-button
+  var(--danger-color-button-70);
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  text-transform: capitalize;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  margin: 1rem 0.8rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  outline: none;
+  min-width: 8.5rem;
+
+  transform: scale3d(1);
+  box-shadow: none;
+  transition: $transition-button;
+  -moz-transition: $transition-button;
+  -o-transition: $transition-button;
+  -webkit-transition: $transition-button;
+
+  background-position: center;
+  -webkit-transition: $transition-background-button;
+  -moz-transition: $transition-background-button;
+  -o-transition: $transition-background-button;
+  transition: $transition-background-button;
+}
+
+.button[data-color][data-disabled="false"]:hover {
+  transform: $transition-scale3d-button;
+  --o-transform: $transition-scale3d-button;
+  --moz-transform: $transition-scale3d-button;
+  --webkit-transform: $transition-scale3d-button;
+}
+
+.button[data-color="primary"] {
+  background-color: var(--primary-color-button);
+}
+
+.button[data-color="primary"][data-disabled="false"]:hover {
+  background: $background-button-primary;
+  border-color: var(--primary-button-color);
+  box-shadow: $box-shadow-button-primary;
+  --webkit-box-shadow: $box-shadow-button-primary;
+}
+
+.button[data-color="primary"][data-disabled="false"]:active {
+  background-color: var(--primary-color-button-90);
+  background-size: $background-size-button;
+  transition: $transition-background-button-disabled;
+}
+
+.button[data-color="primary"][data-disabled="true"] {
+  cursor: $cursor-button-disabled;
+  background-color: var(--primary-color-button-50);
+  box-shadow: $box-shadow-gradient-disabled-button
+    var(--primary-color-button-50);
+}
+
+.button[data-color="secondary"] {
+  background-color: var(--secondary-color);
+}
+
+.button[data-color="secondary"][data-disabled="false"]:hover {
+  background: $background-button-secondary;
+  border-color: var(--secondary-color);
+  box-shadow: $box-shadow-button-secondary;
+  --webkit-box-shadow: $box-shadow-button-secondary;
+}
+
+.button[data-color="secondary"][data-disabled="false"]:active {
+  background-color: var(--secondary-color-90);
+  background-size: $background-size-button;
+  transition: $transition-background-button-disabled;
+}
+
+.button[data-color="secondary"][data-disabled="true"] {
+  cursor: $cursor-button-disabled;
+  background-color: var(--secondary-color-50);
+  box-shadow: $box-shadow-gradient-disabled-button var(--secondary-color-50);
+}
+
+.button[data-color="danger"] {
+  background-color: var(--danger-color);
+}
+
+.button[data-color="danger"][data-disabled="false"]:hover {
+  background: $background-button-danger;
+  border-color: var(--danger-color);
+  box-shadow: $box-shadow-button-danger;
+  --webkit-box-shadow: $box-shadow-button-danger;
+}
+
+.button[data-color="danger"][data-disabled="false"]:active {
+  background-color: var(--danger-color-90);
+  background-size: $background-size-button;
+  transition: $transition-background-button-disabled;
+}
+
+.button[data-color="danger"][data-disabled="true"] {
+  cursor: $cursor-button-disabled;
+  background-color: var(--danger-color-50);
+  box-shadow: $box-shadow-gradient-disabled-button var(--danger-color-50);
+}
+
+.button svg {
+  font-size: 1.5rem;
+  margin-right: 0.4rem;
+}

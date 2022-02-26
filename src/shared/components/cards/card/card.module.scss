@@ -1,0 +1,68 @@
+$transition-card: opacity 0.15s ease, border-color 0.15s ease,
+  transform 0.3s ease, box-shadow 0.7s ease;
+$scale3d-card: 1.08;
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: left;
+  text-decoration: none;
+  max-width: 300px;
+  max-height: 10rem;
+
+  background: var(--glass-background);
+  backdrop-filter: var(--glass-backdrop-filter);
+  -webkit-backdrop-filter: var(--glass-backdrop-filter);
+  border: var(--glass-border);
+
+  border-radius: var(--border-radius);
+  box-shadow: var(--primary-color-box-shadow);
+
+  opacity: 0.7;
+  transform: scale3d(1);
+  -moz-transition: $transition-card;
+  -o-transition: $transition-card;
+  -webkit-transition: $transition-card;
+  transition: $transition-card;
+
+  div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    h2 {
+      color: var(--title-text-color);
+      margin-block-start: 0.5rem !important;
+      margin: 0 0 1rem 0;
+      font-size: 1.5rem;
+    }
+
+    p {
+      color: var(--header-text-color);
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.25;
+    }
+  }
+
+  div:last-child {
+    filter: var(--primary-color-filter);
+    position: relative;
+    bottom: 0.6rem;
+    left: 0.1rem;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 1;
+    transform: scale3d($scale3d-card, $scale3d-card, $scale3d-card);
+  }
+}

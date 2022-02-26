@@ -1,0 +1,84 @@
+@import "./variables.css";
+@import "./fonts/font.css";
+
+$background-gradient-header: linear-gradient(
+  0deg,
+  var(--primary-color-05) 0%,
+  var(--primary-color-30) 100%
+);
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--defaults-fonts);
+  padding-top: 3rem;
+  background: var(--background);
+}
+
+#app-header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 5rem;
+  width: 100%;
+
+  background: $background-gradient-header;
+  backdrop-filter: var(--glass-backdrop-filter);
+  -webkit-backdrop-filter: var(--glass-backdrop-filter);
+  border: var(--glass-border);
+  box-shadow: var(--primary-color-box-shadow);
+
+  transition: top 500ms ease-in-out 200ms;
+}
+
+#app-header.hide {
+  top: -5rem;
+}
+
+#app-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  padding: 0.5rem 1.5rem;
+  font-size: 0.8rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */ /* prevent webkit from resizing text to fit */
+  -webkit-tap-highlight-color: transparent; /* prevent tap highlight color / shadow */ /* prevent copy paste, to allow, change 'none' to 'text' */
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  outline: transparent;
+}
+
+input,
+textarea,
+button,
+select,
+a,
+*[role="button"] .actions {
+  outline: transparent;
+}

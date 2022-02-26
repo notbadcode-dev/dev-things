@@ -1,8 +1,9 @@
 import React from "react";
-import styles from "./card-list.module.css";
 import Card from "../card/card.component";
 
 import { ICard } from "../../../models/card.model";
+
+import styles from "./card-list.module.scss";
 
 type Props = {
   cardList: ICard[];

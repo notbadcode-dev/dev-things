@@ -1,16 +1,48 @@
 import Link from "next/link";
-import { Grid } from "@nextui-org/react";
 import { Icon } from "@iconify/react";
 
-import styles from "./header.module.css";
+import { useEffect } from "react";
+import { APP } from "../../../constants/app.constant";
 
-import Config from "../config/config.component";
+import styles from "./header.module.scss";
 
 const Header = () => {
+  useEffect(() => {
+    const doc = document.documentElement;
+    const w = window;
+    const siteHeader = document.getElementById(APP.ELEMENT.HEADER_ID);
+
+    let prevScroll = w.scrollY || doc.scrollTop;
+    let curScroll;
+    let direction = 0;
+    let prevDirection = 0;
+
+    document.addEventListener("scroll", () => {
+      curScroll = w.scrollY || doc.scrollTop;
+      direction = curScroll > prevScroll ? 2 : 1;
+
+      if (direction !== prevDirection) {
+        toggleHeader(direction, curScroll);
+      }
+
+      prevScroll = curScroll;
+    });
+
+    const toggleHeader = (direction: number, curScroll: number) => {
+      if (direction === 2 && curScroll > 52) {
+        siteHeader?.classList.add("hide");
+        prevDirection = direction;
+      } else if (direction === 1) {
+        siteHeader?.classList.remove("hide");
+        prevDirection = direction;
+      }
+    };
+  });
+
   return (
     <>
-      <div>
-        <h1 className={styles.title}>
+      <div className={styles.container}>
+        <h1>
           <Link href="/">
             <a>
               Dev{" "}
@@ -23,8 +55,6 @@ const Header = () => {
             </a>
           </Link>
         </h1>
-
-        <Config></Config>
       </div>
     </>
   );

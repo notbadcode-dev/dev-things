@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { ButtonBase, ButtonHelper } from "../../models/button.model";
 
-import styles from "./button.module.css";
+import styles from "./button.module.scss";
 
 type Props = {
   button: ButtonBase;
