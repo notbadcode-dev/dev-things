@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <ToastProvider autoDismiss={true}>
-        <header id={APP.ELEMENT.HEADER_ID}>
+        <header id={APP.ELEMENT.HEADER_ID} className="glassmorphism">
           <Header></Header>
         </header>
         <Component {...pageProps} />

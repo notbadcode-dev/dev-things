@@ -19,7 +19,7 @@ const Card: React.FC<Props> = ({ card }) => {
 
   return (
     <Link href={card.route}>
-      <a className={styles.card}>
+      <a className={styles.card + " glassmorphism"}>
         <div>
           <h2>{t(translateTitle)}</h2>
           <p>{t(translateDescription)}</p>

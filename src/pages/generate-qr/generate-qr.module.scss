@@ -1,0 +1,7 @@
+.generateQrcontainer {
+  > :nth-child(2) {
+    :first-child > div {
+      padding: 1rem;
+    }
+  }
+}

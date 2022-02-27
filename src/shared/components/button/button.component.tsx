@@ -65,7 +65,7 @@ const CustomButton: React.FC<Props> = ({ button }) => {
           disabled={button.disabled}
           onClick={button.onPress}
         >
-          {button.icon}
+          <span> {button.icon}</span>
           <span>{t(translateLabel)}</span>
         </button>
       </Tooltip>

@@ -14,14 +14,6 @@ $scale3d-card: 1.08;
   max-width: 300px;
   max-height: 10rem;
 
-  background: var(--glass-background);
-  backdrop-filter: var(--glass-backdrop-filter);
-  -webkit-backdrop-filter: var(--glass-backdrop-filter);
-  border: var(--glass-border);
-
-  border-radius: var(--border-radius);
-  box-shadow: var(--primary-color-box-shadow);
-
   opacity: 0.7;
   transform: scale3d(1);
   -moz-transition: $transition-card;

@@ -12,7 +12,7 @@ import CustomInput from "../../shared/components/input/input.component";
 import { InputSize, InputType } from "../../shared/enums/input.enum";
 import { ButtonColor } from "../../shared/enums/button.enum";
 
-import styles from "./generate-qr.module.css";
+import styles from "./generate-qr.module.scss";
 
 const GenerateQr = () => {
   const [value, setValue] = useState("");
@@ -46,39 +46,41 @@ const GenerateQr = () => {
 
   return (
     <>
-      <div>
-        <HeaderModule
-          header={{
-            icon: "ph:qr-code-duotone",
-            iconInline: true,
-            iconFilterStyle: true,
-            title: "generatorQr.title",
-          }}
-        ></HeaderModule>
-      </div>
-
-      <div>
-        <div className={styles.qrCode}>
-          <QRCode id="QRCode" value={value} size={isMobile ? 96 : 192} />
+      <div className={styles.generateQrcontainer + " container"}>
+        <div>
+          <HeaderModule
+            header={{
+              icon: "ph:qr-code-duotone",
+              iconInline: true,
+              iconFilterStyle: true,
+              title: "generatorQr.title",
+            }}
+          ></HeaderModule>
         </div>
-      </div>
 
-      <div>
-        <CustomInput
-          input={{
-            label: "generatorQr.fields.qrCodeContent.label",
-            placeholder: inputEg,
-            type: InputType.text,
-            size: InputSize.xlarge,
-            value: value,
-            tabIndex: 1,
-            onChange: onChangeQrCodeContent,
-          }}
-        ></CustomInput>
-      </div>
+        <div>
+          <div>
+            <div className={"glassmorphism"}>
+              <QRCode id="QRCode" value={value} size={isMobile ? 96 : 192} />
+            </div>
+          </div>
 
-      <div>
-        <div className={"actions"}>
+          <div>
+            <CustomInput
+              input={{
+                label: "generatorQr.fields.qrCodeContent.label",
+                placeholder: inputEg,
+                type: InputType.text,
+                size: InputSize.xlarge,
+                value: value,
+                tabIndex: 1,
+                onChange: onChangeQrCodeContent,
+              }}
+            ></CustomInput>
+          </div>
+        </div>
+
+        <div>
           <CustomButton
             button={{
               label: "generatorQr.actions.download.label",
