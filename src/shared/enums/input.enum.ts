@@ -31,6 +31,17 @@ export enum InputSize {
   xlarge = "xl",
 }
 
+export enum InputTextType {
+  input = "input",
+  textarea = "textarea",
+}
+
+export enum InputEventType {
+  focus = "focus",
+  blur = "blur",
+  change = "change",
+}
+
 export type InputSizes =
   | InputSize.xsmall
   | InputSize.small
@@ -61,10 +72,5 @@ export type InputTypes =
   | InputType.time
   | InputType.url
   | InputType.week;
-
-export enum InputTextType {
-  input = "input",
-  textarea = "textarea",
-}
 
 export type InputTextTypes = InputTextType.input | InputTextType.textarea;

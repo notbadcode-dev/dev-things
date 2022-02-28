@@ -18,7 +18,9 @@ export class BaseInput {
     public clearable?: boolean,
     public onFocus?: any,
     public onBlur?: any,
-    public onChange?: any
+    public onChange?: any,
+    public onDelete?: any,
+    public error?: string
   ) {}
 }
 
@@ -39,7 +41,9 @@ export class BaseInputHelper {
       object.clearable ?? false,
       object.onFocus,
       object.onBlur,
-      object.onChange
+      object.onChange,
+      object.onDelete,
+      object.error ?? ""
     );
   }
 }

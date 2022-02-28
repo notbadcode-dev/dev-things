@@ -40,6 +40,10 @@ const GenerateQr = () => {
     setValue(e.target.value);
   };
 
+  const onDeleteQrCodeContent = (e: any) => {
+    setValue("");
+  };
+
   const inputEg: string = [APP_EG.URL, APP_EG.TEXT, APP_EG.WIFI][
     Math.floor(Math.random() * 2)
   ];
@@ -74,7 +78,9 @@ const GenerateQr = () => {
                 size: InputSize.xlarge,
                 value: value,
                 tabIndex: 1,
+                error: "Is required",
                 onChange: onChangeQrCodeContent,
+                onDelete: onDeleteQrCodeContent,
               }}
             ></CustomInput>
           </div>

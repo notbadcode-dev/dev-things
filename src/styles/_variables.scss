@@ -5,8 +5,13 @@
     sans-serif;
 
   /* GLOBAL COLORS */
-  --background: rgba(0, 15, 80, 1);
+  --background: rgb(27, 27, 27);
+  // --background: rgba(51, 51, 53, 1);
 
+  /* WHITE COLOR - #FFFFFF */
+  --white-color: rgba(255, 255, 255, 1);
+
+  /* PRIMARY COLOR - #DEDFE2 */
   --primary-color-base: 223, 222, 226;
   --primary-color: rgba(var(--primary-color-base), 1);
   --primary-color-01: rgba(var(--primary-color-base), 0.01);
@@ -20,8 +25,8 @@
   --primary-color-70: rgba(var(--primary-color-base), 0.7);
   --primary-color-80: rgba(var(--primary-color-base), 0.8);
   --primary-color-90: rgba(var(--primary-color-base), 0.9);
-  --primary-color-filter: invert(92%) sepia(7%) saturate(71%) hue-rotate(187deg)
-    brightness(96%) contrast(95%);
+  --primary-color-filter: invert(96%) sepia(6%) saturate(86%) hue-rotate(187deg)
+    brightness(95%) contrast(90%);
   --primary-color-box-shadow: 1px 1px 24px 2px var(--primary-color-05);
 
   --accent-color-base: 55, 64, 255;
@@ -52,7 +57,8 @@
   --primary-color-button-80: rgba(var(--primary-color-button-base), 0.8);
   --primary-color-button-90: rgba(var(--primary-color-button-base), 0.9);
 
-  --secondary-color-base: 247, 247, 247;
+  /* SECONDARY COLOR - #02B839 */
+  --secondary-color-base: 2, 184, 57;
   --secondary-color: rgba(var(--secondary-color-base), 1);
   --secondary-color-10: rgba(var(--secondary-color-base), 0.1);
   --secondary-color-20: rgba(var(--secondary-color-base), 0.2);
@@ -63,9 +69,10 @@
   --secondary-color-70: rgba(var(--secondary-color-base), 0.7);
   --secondary-color-80: rgba(var(--secondary-color-base), 0.8);
   --secondary-color-90: rgba(var(--secondary-color-base), 0.9);
-  --secondary-color-filter: invert(92%) sepia(100%) saturate(0%)
-    hue-rotate(220deg) brightness(104%) contrast(104%);
+  --secondary-color-filter: invert(42%) sepia(44%) saturate(2959%)
+    hue-rotate(113deg) brightness(102%) contrast(98%);
 
+  /* DANGER COLOR - #DC3545 */
   --danger-color-base: 220, 53, 69;
   --danger-color: rgba(var(--danger-color-base), 1);
   --danger-color-10: rgba(var(--danger-color-base), 0.1);
@@ -77,8 +84,8 @@
   --danger-color-70: rgba(var(--danger-color-base), 0.7);
   --danger-color-80: rgba(var(--danger-color-base), 0.8);
   --danger-color-90: rgba(var(--danger-color-base), 0.9);
-  --danger-color-filter: invert(21%) sepia(76%) saturate(2550%)
-    hue-rotate(336deg) brightness(105%) contrast(89%);
+  --danger-color-filter: invert(29%) sepia(62%) saturate(4198%)
+    hue-rotate(338deg) brightness(92%) contrast(87%);
 
   /* TEXT COLORS */
   --title-text-color: var(--primary-color);

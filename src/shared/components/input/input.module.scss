@@ -1,0 +1,132 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  input,
+  label {
+    color: var(--primary-color);
+    border-radius: var(--border-radius);
+  }
+
+  span[data-show] {
+    position: relative;
+    top: -2rem;
+
+    font-size: 0.8rem;
+    color: var(--danger-color-80);
+    margin: 0.2rem 0.6rem 0;
+    opacity: 0;
+
+    transition: opacity 200ms linear, top 200ms linear;
+
+    &[data-show="true"] {
+      opacity: 1;
+      top: 0;
+
+      & + input {
+        border-color: var(--danger-color-80);
+      }
+
+      & + input + label {
+        color: var(--danger-color-80);
+      }
+    }
+  }
+
+  span[role="button"] {
+    position: relative;
+    top: 4.4rem;
+    left: 83%;
+
+    opacity: 0;
+    font-size: 1.5rem;
+
+    svg {
+      filter: var(--primary-color-filter);
+    }
+
+    transition: opacity 300ms ease-in-out;
+    transition: filter 200ms ease-in-out;
+
+    &:hover {
+      svg {
+        filter: var(--danger-color-filter);
+
+        path:first-child {
+          fill: var(--white-color);
+        }
+      }
+
+      cursor: pointer;
+    }
+  }
+
+  label {
+    position: relative;
+    top: 2.3rem;
+
+    padding: 0 0.6rem;
+    margin-bottom: 0.1rem;
+
+    transition: top 300ms ease;
+  }
+
+  input {
+    border: 0.15em solid var(--primary-color-70);
+    background: var(--primary-color-10);
+
+    padding: 0 0.5rem;
+
+    width: 100%;
+    min-width: 250px;
+    height: 3rem;
+
+    &::placeholder {
+      color: transparent;
+      opacity: 0;
+      margin-right: 0.6rem;
+
+      transition: opacity 300ms ease 200ms;
+      transition: color 300ms ease 100ms;
+    }
+
+    &:hover {
+      border-color: var(--accent-color-80);
+      box-shadow: var(--accent-color-box-shadow);
+
+      & + label {
+        color: var(--primary-color-70);
+      }
+    }
+
+    &:focus {
+      border-color: var(--accent-color-80);
+
+      &::placeholder {
+        color: var(--primary-color-70);
+        opacity: 1;
+      }
+
+      & + label {
+        color: var(--accent-color-80);
+        top: 0;
+      }
+    }
+
+    &:not([value=""]) {
+      & + label {
+        top: 0;
+      }
+
+      & + label + span {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// .input div input {
+//   color: var(--input-text-color);
+// }
