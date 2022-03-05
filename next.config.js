@@ -25,6 +25,7 @@ const nextConfig = {
         OS: getOS().MODEL,
         ACCES_KEY: getOS().MASTER_ACCESKEY
     },
+    distDir: '.next/dev-things',
     basePath: process.env.NEXT_PUBLIC_BASE_PATH,
     assetPrefix: process.env.NEXT_PUBLIC_ASSETS_PREFIX,
     reactStrictMode: true,
