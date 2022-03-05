@@ -13,9 +13,12 @@ import { InputSize, InputType } from "../../shared/enums/input.enum";
 import { ButtonColor } from "../../shared/enums/button.enum";
 
 import styles from "./generate-qr.module.scss";
+import { useTranslation } from "react-i18next";
 
 const GenerateQr = () => {
   const [value, setValue] = useState("");
+
+  const { t } = useTranslation();
 
   const qrCodeDowload = () => {
     const svg = document.getElementById("QRCode") as HTMLElement;
@@ -78,7 +81,6 @@ const GenerateQr = () => {
                 size: InputSize.xlarge,
                 value: value,
                 tabIndex: 1,
-                error: "Is required",
                 onChange: onChangeQrCodeContent,
                 onDelete: onDeleteQrCodeContent,
               }}
@@ -95,7 +97,7 @@ const GenerateQr = () => {
                   ? "generatorQr.actions.download.disabledTitle"
                   : "generatorQr.actions.download.title",
               color: ButtonColor.primary,
-              accesKey: "G",
+              accesKeys: [process.env.ACCES_KEY, "G"],
               tabIndex: 2,
               disabled: value.toString().trim().length === 0,
               icon: <Icon icon="ph:qr-code-duotone" inline={true} />,

@@ -1,7 +1,8 @@
 .generateQrcontainer {
   > :nth-child(2) {
     :first-child > div {
-      padding: 2rem;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
 
       :first-child {
         border-radius: var(--border-radius);

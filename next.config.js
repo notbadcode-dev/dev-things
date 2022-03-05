@@ -1,10 +1,30 @@
 const path = require('path');
+// require('dotenv').config({ path: './.env.' + process.env.ENVIRONMENT });
+
+const { isMacOs, isWindows } = require('react-device-detect');
+
+const getOS = () => {
+    if (isWindows) {
+        return 'windows';
+    }
+
+    if (isMacOs) {
+        return 'mascos';
+    }
+
+    return 'other';
+};
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     sassOptions: {
         includePaths: [path.join(__dirname, 'styles')],
     },
+
+    env: {
+        OS: getOS().MODEL,
+        ACCES_KEY: getOS().MASTER_ACCESKEY
+    }
     // basePath: process.env.NEXT_PUBLIC_BASE_PATH,
     // assetPrefix: process.env.NEXT_PUBLIC_ASSETS_PREFIX,
     // reactStrictMode: true,

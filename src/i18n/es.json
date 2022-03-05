@@ -15,6 +15,9 @@
             "url": "eg. www.website.notbadcode.xyz",
             "text": "eg. cualquier text",
             "wifi": "eg. contraseña wifi"
+        },
+        "errors": {
+            "required": "Obligatorio"
         }
     },
     "generatorQr": {

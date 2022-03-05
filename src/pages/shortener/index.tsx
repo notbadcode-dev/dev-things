@@ -77,6 +77,11 @@ const Shortener = () => {
     setShortedUrl(e.target.value);
   };
 
+  const onDeleteShortenerUrl = (e: any) => {
+    setUrl("");
+    setShortedUrl("");
+  };
+
   let disabledShortenUrl: boolean = !new RegExp(REGEX.SHORTENER_URL).test(
     SHORTENER.ALLOWED_PROTOCOL + url
   );
@@ -96,31 +101,38 @@ const Shortener = () => {
         </div>
 
         <div>
-          <CustomInput
-            input={{
-              label: "shortener.fileds.urlToShort.label",
-              placeholder: APP_EG.URL,
-              labelLeft: SHORTENER.ALLOWED_PROTOCOL,
-              type: InputType.text,
-              size: InputSize.xlarge,
-              value: url,
-              onChange: onChangeShortenerUrl,
-            }}
-          ></CustomInput>
-
-          <CustomInput
-            input={{
-              id: shortedUrlId,
-              label: "shortener.fileds.shortedUrl.label",
-              placeholder: "shortener.fileds.shortedUrl.placeholder",
-              type: InputType.text,
-              size: InputSize.xlarge,
-              clearable: false,
-              disabled: true,
-              value: shortedUrl,
-              onChange: onChangeShortedUrl,
-            }}
-          ></CustomInput>
+          <div>
+            <CustomInput
+              input={{
+                label: "shortener.fileds.urlToShort.label",
+                placeholder: APP_EG.URL,
+                labelLeft: SHORTENER.ALLOWED_PROTOCOL,
+                type: InputType.text,
+                size: InputSize.xlarge,
+                clearable: true,
+                value: url,
+                tabIndex: 1,
+                onChange: onChangeShortenerUrl,
+                onDelete: onDeleteShortenerUrl,
+              }}
+            ></CustomInput>
+          </div>
+          <div>
+            <CustomInput
+              input={{
+                id: shortedUrlId,
+                label: "shortener.fileds.shortedUrl.label",
+                placeholder: "shortener.fileds.shortedUrl.placeholder",
+                type: InputType.text,
+                size: InputSize.xlarge,
+                clearable: false,
+                disabled: true,
+                value: shortedUrl,
+                tabIndex: 2,
+                onChange: onChangeShortedUrl,
+              }}
+            ></CustomInput>
+          </div>
         </div>
 
         <div>

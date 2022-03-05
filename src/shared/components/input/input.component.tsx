@@ -15,7 +15,7 @@ const CustomInput: React.FC<Props> = ({ input: data }) => {
   const [showError, setShowError] = useState(false);
 
   const { t } = useTranslation();
-  data = BaseInputHelper.mapObject(data);
+  data = BaseInputHelper.mapObject(data, t);
 
   const translateLabel: string = data.label;
   const translatePlaceholder: string = data.placeholder ?? "";
@@ -42,10 +42,24 @@ const CustomInput: React.FC<Props> = ({ input: data }) => {
     }
   };
 
+  const renderDeleteIcon = () => {
+    if (data.clearable) {
+      return (
+        <>
+          <span role="button" aria-label="Clear input" onClick={data.onDelete}>
+            <Icon icon="uim:times-circle" />
+          </span>
+        </>
+      );
+    }
+  };
+
   return (
     <>
       <div className={styles.inputContainer}>
         <span data-show={showError}>{data.error}</span>
+
+        <span data-index={data.tabIndex}>{data.tabIndex}</span>
 
         <input
           id={data.id}
@@ -60,11 +74,10 @@ const CustomInput: React.FC<Props> = ({ input: data }) => {
           onFocus={onTouched}
           onChange={onTouched}
         />
+
         <label htmlFor={data.id}>{t(translateLabel)}</label>
 
-        <span role="button" aria-label="Clear input" onClick={data.onDelete}>
-          <Icon icon="uim:times-circle" />
-        </span>
+        {renderDeleteIcon()}
       </div>
     </>
   );

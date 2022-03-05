@@ -19,7 +19,7 @@ export class ButtonBase {
       | undefined,
     public className?: string,
     public tabIndex?: number,
-    public accesKey?: string,
+    public accesKeys?: string | undefined[],
     public disabled?: boolean,
     public disable?: any,
     public icon?: ReactElement<any, any>
@@ -36,7 +36,7 @@ export class ButtonHelper {
       object.type ?? ButtonType.button,
       object.className ?? "",
       object.tabIndex ?? -1,
-      object.accesKey,
+      object.accesKeys,
       object.disabled ?? false,
       object.disable ?? undefined,
       object.icon ?? undefined

@@ -1,7 +1,6 @@
 import { InputSize, InputType, InputTypes } from "../enums/input.enum";
 
 const unnamedButton: string = "unnamed";
-
 export class BaseInput {
   constructor(
     public label: string,
@@ -14,6 +13,7 @@ export class BaseInput {
     public customSize?: string,
     public readOnly?: boolean,
     public disabled?: boolean,
+    public required?: boolean,
     public tabIndex?: number,
     public clearable?: boolean,
     public onFocus?: any,
@@ -25,7 +25,7 @@ export class BaseInput {
 }
 
 export class BaseInputHelper {
-  static mapObject(object: BaseInput): BaseInput {
+  static mapObject(object: BaseInput, t: any): BaseInput {
     return new BaseInput(
       object.label && object.label.length > 0 ? object.label : unnamedButton,
       object.type ?? InputType.text,
@@ -37,13 +37,14 @@ export class BaseInputHelper {
       object.customSize ?? undefined,
       object.readOnly ?? false,
       object.disabled ?? false,
+      object.required ?? false,
       object.tabIndex ?? 0,
       object.clearable ?? false,
       object.onFocus,
       object.onBlur,
       object.onChange,
       object.onDelete,
-      object.error ?? ""
+      object.required ? t("app.errors.required") : object.error ?? ""
     );
   }
 }

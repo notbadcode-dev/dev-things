@@ -6,6 +6,7 @@ import Footer from "../shared/components/structure/footer/footer.component";
 
 import "../i18n/config";
 import "../styles/globals.scss";
+
 import { APP } from "../shared/constants/app.constant";
 
 function MyApp({ Component, pageProps }: AppProps) {
