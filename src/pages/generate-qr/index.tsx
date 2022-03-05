@@ -97,7 +97,6 @@ const GenerateQr = () => {
                   ? "generatorQr.actions.download.disabledTitle"
                   : "generatorQr.actions.download.title",
               color: ButtonColor.primary,
-              accesKeys: [process.env.ACCES_KEY, "G"],
               tabIndex: 2,
               disabled: value.toString().trim().length === 0,
               icon: <Icon icon="ph:qr-code-duotone" inline={true} />,
