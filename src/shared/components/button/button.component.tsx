@@ -18,15 +18,15 @@ const CustomButton: React.FC<Props> = ({ button }) => {
   const translateTitle: string = button.title ?? "";
   const translateLabel: string = button.label;
 
-  const renderAccessKey = () => {
-    return process.env.OS !== APP.SO.OTHER ? (
-      <span>
-        {button?.accesKeys?.map((key: string) => key !== undefined).join(" + ")}
-      </span>
-    ) : (
-      <></>
-    );
-  };
+  // const renderAccessKey = () => {
+  //   return process.env.OS !== APP.SO.OTHER ? (
+  //     <span>
+  //       {button?.accesKeys?.map((key: string) => key !== undefined).join(" + ")}
+  //     </span>
+  //   ) : (
+  //     <></>
+  //   );
+  // };
 
   const renderButton: any = (
     <>

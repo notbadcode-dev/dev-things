@@ -1,8 +1,5 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Grid, Button } from "@nextui-org/react";
-
-import styles from "./change-language.module.css";
 
 const ChangeLanguage = () => {
   const { i18n } = useTranslation();

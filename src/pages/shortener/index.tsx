@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Icon } from "@iconify/react";
-import { Grid } from "@nextui-org/react";
 import { useToasts } from "react-toast-notifications";
 import { useTranslation } from "react-i18next";
 
@@ -144,7 +143,6 @@ const Shortener = () => {
                   ? "shortener.actions.short.disabledTitle"
                   : "shortener.actions.short.title",
                 color: ButtonColor.primary,
-                accesKey: "S",
                 tabIndex: 2,
                 disabled: disabledShortenUrl,
                 icon: <Icon icon="ic:twotone-add-link" inline={true} />,
@@ -160,7 +158,6 @@ const Shortener = () => {
                     ? "shortener.actions.copy.disabledTitle"
                     : "shortener.actions.copy.title",
                 color: ButtonColor.primary,
-                accesKey: "C",
                 tabIndex: 2,
                 disabled: shortedUrl.toString().trim().length === 0,
                 icon: <Icon icon="ic:twotone-copy-all" />,

@@ -1,12 +1,4 @@
 import React from "react";
-import { Grid, Card } from "@nextui-org/react";
-import { Icon } from "@iconify/react";
-
-import styles from "./config.module.css";
-
-import ChangeLanguage from "../config/change-language/change-language.component";
-import ChangeTheming from "../config/change-theme/change-theme.component";
-
 const Config = () => {
   let toggleConfig: boolean = false;
 
