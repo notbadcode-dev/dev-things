@@ -36,6 +36,9 @@ jobs:
       - name: Run Export 🔧
         run: npm run export
 
+      - name: Tranform on Static File 🔧
+        run: npm run replaceFilePaths
+
       - name: Deploy GH Pages 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:

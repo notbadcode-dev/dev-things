@@ -47,7 +47,7 @@ const nextConfig = {
                         name: "[name]-[hash:8].[ext]",
                         publicPath: (url) => {
                             console.log(url);
-                            return `/_next/static/css/${url}`;
+                            return `/dev-tings/_next/static/css/${url}`;
                         },
                         outputPath: `${isServer ? "../" : ""}static/css/`,
                         esModule: false,
