@@ -12,6 +12,23 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=G-Y0********`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+                                window.dataLayer = window.dataLayer || [];
+                                function gtag(){dataLayer.push(arguments);}
+                                gtag('js', new Date());
+                                gtag('config', 'G-CESBSK5K2T', {
+                                page_path: window.location.pathname,
+                                });
+                            `,
+          }}
+        />
+
         <title>Dev-things</title>
         <meta name="description" content="Utils for developers" />
         <link rel="icon" href="/favicon.ico" />

@@ -10,7 +10,7 @@
     "export": "next export && touch out/.nojekyll",
     "build-ssg": "next build && next export && touch out/.nojekyll",
     "deploy": "gh-pages -d out -t true",
-    "replaceFilePaths": "node ./replacer.js"
+    "replaceFilePaths": "node ./lib/replacer.js"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
