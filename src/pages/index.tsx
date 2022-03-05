@@ -14,7 +14,7 @@ const Home: NextPage = () => {
       <Head>
         <script
           async
-          src={`https://www.googletagmanager.com/gtag/js?id=G-Y0********`}
+          src={`https://www.googletagmanager.com/gtag/js?id=G-CESBSK5K2T`}
         />
         <script
           dangerouslySetInnerHTML={{
