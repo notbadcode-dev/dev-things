@@ -20,9 +20,12 @@ function MyApp({ Component, pageProps }: AppProps) {
     const handleRouteChange = (url: string) => {
       ga.pageview(url);
     };
+    console.log("Change");
+
     router.events.on("routeChangeComplete", handleRouteChange);
     return () => {
       router.events.off("routeChangeComplete", handleRouteChange);
+      console.log("Change");
     };
   }, [router.events]);
 
@@ -30,6 +33,23 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <ToastProvider autoDismiss={true}>
         <header id={APP.ELEMENT.HEADER_ID} className="glassmorphism">
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=G-CESBSK5K2T`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                                window.dataLayer = window.dataLayer || [];
+                                function gtag(){dataLayer.push(arguments);}
+                                gtag('js', new Date());
+                                gtag('config', 'G-CESBSK5K2T', {
+                                page_path: window.location.pathname,
+                                });
+                            `,
+            }}
+          />
+
           <Header></Header>
         </header>
         <Component {...pageProps} />
